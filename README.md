@@ -1,1 +1,8 @@
 # PSO-GCDA-
+Synthetic biology aims to design and build gene circuits for a wide variety of different tasks. Whilst current approaches often employ an initial human designed circuit topology and utilise iterative approaches such as directed evolution to fine-tune part function a more streamlined workflow is highly desirable. By utilising Particle Swarm Optimization we present a potential computational solution which can generate a circuit with an optimized topology and parameter set given a user defined target output and allowed number of genes.
+
+Gene circuits can be represented as network graphs in which nodes represent genes or inputs andan edge from node A to node B represents a regulation of the expression of species B by speciesA. The set of all gene circuits containing g genes and i inputs can be represented as subgraphs ofa gene circuit supergraph. A gene circuit supergraph is a directed graph consisting of g + i nodesand g2+ ig edges. Each of the g gene nodes has an edge going to each other gene node and anedge going to itself. Each of the i input nodes has an edge going to each of the gene nodes.
+
+In order to obtain usable information about the behaviour of gene circuits to inform the design process we employ a system of ordinary differential equations (ODE) to represent genes and their regulatory interactions.
+
+Having created a model to quantify the function of an arbitrary gene circuit we now need to optimize the circuit for a specific task. To carry out our optimization we employ Particle Swarm Optimization a well known meta-heauristic optimization technique inspired by the movement of flocking birds.
