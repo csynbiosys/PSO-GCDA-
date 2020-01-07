@@ -1,0 +1,46 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://127.0.0.1:5000/home">GCDA</a>
+            </div>
+        </div>
+    </nav>
+{% endblock %} 
+
+{% block content %}
+
+    <section id="title" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+            <center>
+                <h2>Circuit Build Output</h2>
+                <img src="/static/builds/{{ circuit_name }}0.png" style="width:500px;height:600px;">
+            </center>
+        </div>
+      </div>
+    </section>
+    
+    <section id="circuit" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+            <center>
+                <h2>Circuit Build Output</h2>
+                {% for item in hills %}
+                    <h6>Promtors on {{ gene_labels[loop.index0] }} have Hill coefficients: {{ hills[loop.index0] }}</h6>
+                {% endfor %}
+                {% for item in edge_starts %}
+                    <h6> {{ edge_starts[loop.index0] }} Promoter with Michaelis Mentens constant {{ kms[loop.index0] }} on gene {{ edge_ends[loop.index0] }}.</h6>
+                {% endfor %}
+            </center>
+        </div>
+      </div>
+    </section>
+    
+{% endblock %}

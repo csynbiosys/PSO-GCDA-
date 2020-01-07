@@ -1,0 +1,67 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://127.0.0.1:5000/home">GCDA</a>
+            </div>
+        </div>
+    </nav>
+{% endblock %} 
+
+{% block content %}
+
+    <section id="out" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+            <h2>Output time series:</h2>
+        </div>
+      </div>
+    </section>
+    
+    {% for o in range(0, output_nodes) %}
+        {% set iter = loop.index0|string %}
+        {% set outpath = circuit_name + iter %}
+        <div class="container">
+            <div class="row">
+                <center>
+                    <img src="/static/outputs/extracted/{{ outpath }}.png">
+                </center>
+            </div>
+        </div>
+    {% endfor %}
+    
+    <section id="in" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+            <h2>Input time series:</h2>
+        </div>
+      </div>
+    </section>
+    
+    {% for i in range(0, input_nodes) %}
+        {% set iter = loop.index0|string %}
+        {% set inpath = circuit_name + iter %}
+        <div class="container">
+            <div class="row">
+                <center>
+                    <img src="/static/inputs/extracted/{{ inpath }}.png">
+                </center>
+            </div>
+        </div>
+    {% endfor %}
+    
+    <div class="container">
+        <div class="row">
+                <center>
+                    <a href="http://127.0.0.1:5000/building/{{ circuit_name }}/{{ gene_nodes }}/{{ output_nodes }}/{{ input_nodes }}/{{ max_expression }}/{{ time_span }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Build</a>
+                </center>
+        </div>
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://127.0.0.1:5000/home">GCDA</a>
+            </div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://127.0.0.1:5000/database">Database</a>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    
+    <section id="about" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+            <h2>Welcome to easy web based Gene Circuit Design Automation using Particle Swarms!</h2>
+        </div>
+      </div>
+    </section>
+    
+    <div class="container">
+        <div class="row">
+            <center>
+                <a href="http://127.0.0.1:5000/start" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Start</a>
+            </center>
+        </div>
+    </div>
+    
+    <div class ="container">
+        <div class="row">
+            <h2>About</h2>
+            <p>Synthetic biology aims to design and build gene circuits for a wide variety of different tasks.  Whilst current  approaches  often  employ  an  initial  human  designed  circuit  topology  and  utilise  iterative approaches  such  as  directed  evolution  to  fine-tune  part  function  a  more  streamlined  workflow  is highly desirable.  By utilising Particle Swarm Optimization we present a potential computational solution which can generate a circuit with an optimized topology and parameter set given a user defined target output and allowed number of genes.</p>
+            <h3>Representing Gene Circuits</h3>
+            <p>Gene circuits can be represented as network graphs in which nodes represent genes or inputs andan edge from node A to node B represents a regulation of the expression of species B by speciesA. The set of all gene circuits containing g genes and i inputs can be represented as subgraphs ofa gene circuit supergraph.  A gene circuit supergraph is a directed graph consisting of g + i nodesand g2+ ig edges.  Each of the g gene nodes has an edge going to each other gene node and anedge going to itself.  Each of the i input nodes has an edge going to each of the gene nodes. </p>
+            <img src="/static/home_banner.png"  width="100%" height="100%">
+            <h3>Modelling Gene Circuits</h3>
+            <p>In order to obtain usable information about the behaviour of gene circuits to inform the design process we employ a system of ordinary differential equations (ODE) to represent genes and their regulatory interactions.</p>
+            <img src="/static/modelling.png"  width="100%" height="100%">
+            <img src="/static/branching_hill.png"  width="100%" height="100%">
+            <h3>Optimizing Gene Circuits</h3>
+            <p>Having created a model to quantify the function of an arbitrary gene circuit we now need to optimize the circuit for a specific task. To carry out our optimization we employ Particle Swarm Optimization a well known meta-heauristic optimization technique inspired by the movement of flocking birds. </p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://127.0.0.1:5000/home">GCDA</a>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <section id="start" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+            <h2>In order to build our representation of your circuit we need to know the expected number of genes and how many inputs and outputs you would like.</h2>
+        </div>
+      </div>
+    </section>
+    
+    <section id="form" class="content-section text-center">
+        <div class="container">
+            <div class="row">
+                <form action="" method="post" novalidate>
+                    {{ form.hidden_tag() }}
+                    <p>
+                        {{ form.circuit_name.label }}<br>
+                        {{ form.circuit_name(size=32) }}
+                    </p>
+                    <p>
+                        {{ form.gene_nodes.label }}<br>
+                        {{ form.gene_nodes(size=32) }}
+                    </p>
+                    <p>
+                        {{ form.input_nodes.label }}<br>
+                        {{ form.input_nodes(size=32) }}
+                    </p>
+                    <p>
+                        {{ form.output_nodes.label }}<br>
+                        {{ form.output_nodes(size=32) }}
+                    </p>
+                    <p>
+                        {{ form.max_expression.label }}<br>
+                        {{ form.max_expression(size=32) }}
+                    </p>
+                    <p>
+                        {{ form.time_span.label }}<br>
+                        {{ form.time_span(size=32) }}
+                    </p>
+                    <p>
+                        {{ form.submit() }}
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://127.0.0.1:5000/home">GCDA</a>
+            </div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://127.0.0.1:5000/database">Database</a>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <section id="database_summary" class="content-section text-center">
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Circuit Name</th>
+                        <th scope="col">Genes</th>
+                        <th scope="col">Inputs</th>
+                        <th scope="col">Outputs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for circuit in database_sum %}
+                        <tr>
+                            <th scope="row"><a href="http://127.0.0.1:5000/circuit_summary/{{ circuit[0] }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">{{ circuit[0] }}</a></th>
+                            <td>{{ circuit[1] }}</td>
+                            <td>{{ circuit[2] }}</td>
+                            <td>{{ circuit[3] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock %}

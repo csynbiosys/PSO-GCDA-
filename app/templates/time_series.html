@@ -1,0 +1,599 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://127.0.0.1:5000/home">GCDA</a>
+            </div>
+        </div>
+    </nav>
+{% endblock %} 
+
+{% block content %}
+
+    <section id="title" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+            <h2>On this page you can draw the time series for your circuit: {{ circuit_name }}</h2>
+        </div>
+      </div>
+    </section>
+
+    <section id="output_traces" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+            <h2>Draw your {{ output_nodes }} output traces here in different colours, refresh the page to clear the canvas and start again.</h2>
+        </div>
+      </div>
+    </section>
+    
+    
+    <div class="container">
+        <center>
+            <button id="pencilP" type="button" style="height: 25px; width: 100px;" onclick="purple_pencil()">Purple</button>
+            <button id="pencilDG" type="button" style="height: 25px; width: 100px;" onclick="dark_green_pencil()">Dark Green</button>
+            <button id="pencilLG" type="button" style="height: 25px; width: 100px;" onclick="light_green_pencil()">Light Green</button>
+            <button id="pencilY" type="button" style="height: 25px; width: 100px;" onclick="yellow_pencil()">Yellow</button>
+            <button id="pencilB" type="button" style="height: 25px; width: 100px;" onclick="brown_pencil()">Brown</button>
+            <button id="pencilLB" type="button" style="height: 25px; width: 100px;" onclick="light_blue_pencil()">Light Blue</button>
+            <button id="pencilDB" type="button" style="height: 25px; width: 100px;" onclick="dark_blue_pencil()">Dark Blue</button>
+            <button id="pencilR" type="button" style="height: 25px; width: 100px;" onclick="red_pencil()">Red</button>
+            <button id="pencilBL" type="button" style="height: 25px; width: 100px;" onclick="black_pencil()">Black</button>
+            <button id="pencilO" type="button" style="height: 25px; width: 100px;" onclick="orange_pencil()">Orange</button>
+            <button id="pencilPI" type="button" style="height: 25px; width: 100px;" onclick="pink_pencil()">Pink</button>
+            <button id="pencilGR" type="button" style="height: 25px; width: 100px;" onclick="grey_pencil()">Grey</button>
+            <button id="save" type="button" style="height: 25px; width:100px;" onclick="save()">Save</button>
+        </center>
+        <canvas id="canvas" width="750" height="450" style="border: 5px solid #000000;"></canvas>
+            
+        <script>
+            
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            var width = canvas.width, height = canvas.height;
+            var hold = false;
+            
+            var purple = "#ae00ff";
+            var dark_green = "#265300";
+            var light_green = "#75ff00";
+            var yellow = "#ffcf33";
+            var brown = "#986928";
+            var light_blue = "#00f8ff";
+            var dark_blue = "#110e7a";
+            var red = "#ff0900";
+            var black = "#000000";
+            var orange = "#ffab00";
+            var pink = "#ff008e";
+            var grey = "#898989";
+            var clear = "#FFFFFF";
+            
+            function purple_pencil (){
+                
+                canvas.onmousedown = function (e){
+                    curX = e.clientX - canvas.offsetLeft;
+                    curY = e.clientY - canvas.offsetTop;
+                    hold = true;
+                    
+                    prevX = curX;
+                    prevY = curY;
+                    ctx.beginPath();
+                    ctx.moveTo(prevX, prevY);
+                };
+                
+                canvas.onmousemove = function (e){
+                    if(hold){
+                        curX = e.clientX - canvas.offsetLeft;
+                        curY = e.clientY - canvas.offsetTop;
+                        draw();
+                    }
+                };
+                
+                canvas.onmouseup = function (e){
+                    hold = false;
+                };
+                        
+                canvas.onmouseout = function (e){
+                    hold = false;
+                };
+                        
+                function draw (i){
+                    ctx.lineTo(curX, curY);
+                    ctx.stroke();
+                    
+                    ctx.strokeStyle = purple
+
+                    canvas_data.pencil.push({ "startx": prevX, "starty": prevY, "endx": curX, "endy": curY, 
+                            "thick": ctx.lineWidth, "color": ctx.strokeStyle });
+                }
+            }
+            
+            function dark_green_pencil (){
+                
+                canvas.onmousedown = function (e){
+                    curX = e.clientX - canvas.offsetLeft;
+                    curY = e.clientY - canvas.offsetTop;
+                    hold = true;
+                    
+                    prevX = curX;
+                    prevY = curY;
+                    ctx.beginPath();
+                    ctx.moveTo(prevX, prevY);
+                };
+                
+                canvas.onmousemove = function (e){
+                    if(hold){
+                        curX = e.clientX - canvas.offsetLeft;
+                        curY = e.clientY - canvas.offsetTop;
+                        draw();
+                    }
+                };
+                
+                canvas.onmouseup = function (e){
+                    hold = false;
+                };
+                        
+                canvas.onmouseout = function (e){
+                    hold = false;
+                };
+                        
+                function draw (i){
+                    ctx.lineTo(curX, curY);
+                    ctx.stroke();
+                    
+                    ctx.strokeStyle = dark_green
+
+                    canvas_data.pencil.push({ "startx": prevX, "starty": prevY, "endx": curX, "endy": curY, 
+                            "thick": ctx.lineWidth, "color": ctx.strokeStyle });
+                }
+            }
+                
+            function light_green_pencil (){
+                
+                canvas.onmousedown = function (e){
+                    curX = e.clientX - canvas.offsetLeft;
+                    curY = e.clientY - canvas.offsetTop;
+                    hold = true;
+                    
+                    prevX = curX;
+                    prevY = curY;
+                    ctx.beginPath();
+                    ctx.moveTo(prevX, prevY);
+                };
+                
+                canvas.onmousemove = function (e){
+                    if(hold){
+                        curX = e.clientX - canvas.offsetLeft;
+                        curY = e.clientY - canvas.offsetTop;
+                        draw();
+                    }
+                };
+                
+                canvas.onmouseup = function (e){
+                    hold = false;
+                };
+                        
+                canvas.onmouseout = function (e){
+                    hold = false;
+                };
+                        
+                function draw (i){
+                    ctx.lineTo(curX, curY);
+                    ctx.stroke();
+                    
+                    ctx.strokeStyle = light_green
+
+                    canvas_data.pencil.push({ "startx": prevX, "starty": prevY, "endx": curX, "endy": curY, 
+                            "thick": ctx.lineWidth, "color": ctx.strokeStyle });
+                }
+            }
+            
+            function yellow_pencil (){
+                
+                canvas.onmousedown = function (e){
+                    curX = e.clientX - canvas.offsetLeft;
+                    curY = e.clientY - canvas.offsetTop;
+                    hold = true;
+                    
+                    prevX = curX;
+                    prevY = curY;
+                    ctx.beginPath();
+                    ctx.moveTo(prevX, prevY);
+                };
+                
+                canvas.onmousemove = function (e){
+                    if(hold){
+                        curX = e.clientX - canvas.offsetLeft;
+                        curY = e.clientY - canvas.offsetTop;
+                        draw();
+                    }
+                };
+                
+                canvas.onmouseup = function (e){
+                    hold = false;
+                };
+                        
+                canvas.onmouseout = function (e){
+                    hold = false;
+                };
+                        
+                function draw (i){
+                    ctx.lineTo(curX, curY);
+                    ctx.stroke();
+                    
+                    ctx.strokeStyle = yellow
+
+                    canvas_data.pencil.push({ "startx": prevX, "starty": prevY, "endx": curX, "endy": curY, 
+                            "thick": ctx.lineWidth, "color": ctx.strokeStyle });
+                }
+            }
+            
+            function brown_pencil (){
+                
+                canvas.onmousedown = function (e){
+                    curX = e.clientX - canvas.offsetLeft;
+                    curY = e.clientY - canvas.offsetTop;
+                    hold = true;
+                    
+                    prevX = curX;
+                    prevY = curY;
+                    ctx.beginPath();
+                    ctx.moveTo(prevX, prevY);
+                };
+                
+                canvas.onmousemove = function (e){
+                    if(hold){
+                        curX = e.clientX - canvas.offsetLeft;
+                        curY = e.clientY - canvas.offsetTop;
+                        draw();
+                    }
+                };
+                
+                canvas.onmouseup = function (e){
+                    hold = false;
+                };
+                        
+                canvas.onmouseout = function (e){
+                    hold = false;
+                };
+                        
+                function draw (i){
+                    ctx.lineTo(curX, curY);
+                    ctx.stroke();
+                    
+                    ctx.strokeStyle = brown
+
+                    canvas_data.pencil.push({ "startx": prevX, "starty": prevY, "endx": curX, "endy": curY, 
+                            "thick": ctx.lineWidth, "color": ctx.strokeStyle });
+                }
+            }
+            
+            function light_blue_pencil (){
+                
+                canvas.onmousedown = function (e){
+                    curX = e.clientX - canvas.offsetLeft;
+                    curY = e.clientY - canvas.offsetTop;
+                    hold = true;
+                    
+                    prevX = curX;
+                    prevY = curY;
+                    ctx.beginPath();
+                    ctx.moveTo(prevX, prevY);
+                };
+                
+                canvas.onmousemove = function (e){
+                    if(hold){
+                        curX = e.clientX - canvas.offsetLeft;
+                        curY = e.clientY - canvas.offsetTop;
+                        draw();
+                    }
+                };
+                
+                canvas.onmouseup = function (e){
+                    hold = false;
+                };
+                        
+                canvas.onmouseout = function (e){
+                    hold = false;
+                };
+                        
+                function draw (i){
+                    ctx.lineTo(curX, curY);
+                    ctx.stroke();
+                    
+                    ctx.strokeStyle = light_blue
+
+                    canvas_data.pencil.push({ "startx": prevX, "starty": prevY, "endx": curX, "endy": curY, 
+                            "thick": ctx.lineWidth, "color": ctx.strokeStyle });
+                }
+            }
+            
+            function dark_blue_pencil (){
+                
+                canvas.onmousedown = function (e){
+                    curX = e.clientX - canvas.offsetLeft;
+                    curY = e.clientY - canvas.offsetTop;
+                    hold = true;
+                    
+                    prevX = curX;
+                    prevY = curY;
+                    ctx.beginPath();
+                    ctx.moveTo(prevX, prevY);
+                };
+                
+                canvas.onmousemove = function (e){
+                    if(hold){
+                        curX = e.clientX - canvas.offsetLeft;
+                        curY = e.clientY - canvas.offsetTop;
+                        draw();
+                    }
+                };
+                
+                canvas.onmouseup = function (e){
+                    hold = false;
+                };
+                        
+                canvas.onmouseout = function (e){
+                    hold = false;
+                };
+                        
+                function draw (i){
+                    ctx.lineTo(curX, curY);
+                    ctx.stroke();
+                    
+                    ctx.strokeStyle = dark_blue
+
+                    canvas_data.pencil.push({ "startx": prevX, "starty": prevY, "endx": curX, "endy": curY, 
+                            "thick": ctx.lineWidth, "color": ctx.strokeStyle });
+                }
+            }
+            
+            function red_pencil (){
+                
+                canvas.onmousedown = function (e){
+                    curX = e.clientX - canvas.offsetLeft;
+                    curY = e.clientY - canvas.offsetTop;
+                    hold = true;
+                    
+                    prevX = curX;
+                    prevY = curY;
+                    ctx.beginPath();
+                    ctx.moveTo(prevX, prevY);
+                };
+                
+                canvas.onmousemove = function (e){
+                    if(hold){
+                        curX = e.clientX - canvas.offsetLeft;
+                        curY = e.clientY - canvas.offsetTop;
+                        draw();
+                    }
+                };
+                
+                canvas.onmouseup = function (e){
+                    hold = false;
+                };
+                        
+                canvas.onmouseout = function (e){
+                    hold = false;
+                };
+                        
+                function draw (i){
+                    ctx.lineTo(curX, curY);
+                    ctx.stroke();
+                    
+                    ctx.strokeStyle = red
+
+                    canvas_data.pencil.push({ "startx": prevX, "starty": prevY, "endx": curX, "endy": curY, 
+                            "thick": ctx.lineWidth, "color": ctx.strokeStyle });
+                }
+            }
+            
+            function black_pencil (){
+                
+                canvas.onmousedown = function (e){
+                    curX = e.clientX - canvas.offsetLeft;
+                    curY = e.clientY - canvas.offsetTop;
+                    hold = true;
+                    
+                    prevX = curX;
+                    prevY = curY;
+                    ctx.beginPath();
+                    ctx.moveTo(prevX, prevY);
+                };
+                
+                canvas.onmousemove = function (e){
+                    if(hold){
+                        curX = e.clientX - canvas.offsetLeft;
+                        curY = e.clientY - canvas.offsetTop;
+                        draw();
+                    }
+                };
+                
+                canvas.onmouseup = function (e){
+                    hold = false;
+                };
+                        
+                canvas.onmouseout = function (e){
+                    hold = false;
+                };
+                        
+                function draw (i){
+                    ctx.lineTo(curX, curY);
+                    ctx.stroke();
+                    
+                    ctx.strokeStyle = black
+
+                    canvas_data.pencil.push({ "startx": prevX, "starty": prevY, "endx": curX, "endy": curY, 
+                            "thick": ctx.lineWidth, "color": ctx.strokeStyle });
+                }
+            }
+            
+            function orange_pencil (){
+                
+                canvas.onmousedown = function (e){
+                    curX = e.clientX - canvas.offsetLeft;
+                    curY = e.clientY - canvas.offsetTop;
+                    hold = true;
+                    
+                    prevX = curX;
+                    prevY = curY;
+                    ctx.beginPath();
+                    ctx.moveTo(prevX, prevY);
+                };
+                
+                canvas.onmousemove = function (e){
+                    if(hold){
+                        curX = e.clientX - canvas.offsetLeft;
+                        curY = e.clientY - canvas.offsetTop;
+                        draw();
+                    }
+                };
+                
+                canvas.onmouseup = function (e){
+                    hold = false;
+                };
+                        
+                canvas.onmouseout = function (e){
+                    hold = false;
+                };
+                        
+                function draw (i){
+                    ctx.lineTo(curX, curY);
+                    ctx.stroke();
+                    
+                    ctx.strokeStyle = orange
+
+                    canvas_data.pencil.push({ "startx": prevX, "starty": prevY, "endx": curX, "endy": curY, 
+                            "thick": ctx.lineWidth, "color": ctx.strokeStyle });
+                }
+            }
+            
+            function pink_pencil (){
+                
+                canvas.onmousedown = function (e){
+                    curX = e.clientX - canvas.offsetLeft;
+                    curY = e.clientY - canvas.offsetTop;
+                    hold = true;
+                    
+                    prevX = curX;
+                    prevY = curY;
+                    ctx.beginPath();
+                    ctx.moveTo(prevX, prevY);
+                };
+                
+                canvas.onmousemove = function (e){
+                    if(hold){
+                        curX = e.clientX - canvas.offsetLeft;
+                        curY = e.clientY - canvas.offsetTop;
+                        draw();
+                    }
+                };
+                
+                canvas.onmouseup = function (e){
+                    hold = false;
+                };
+                        
+                canvas.onmouseout = function (e){
+                    hold = false;
+                };
+                        
+                function draw (i){
+                    ctx.lineTo(curX, curY);
+                    ctx.stroke();
+                    
+                    ctx.strokeStyle = pink
+
+                    canvas_data.pencil.push({ "startx": prevX, "starty": prevY, "endx": curX, "endy": curY, 
+                            "thick": ctx.lineWidth, "color": ctx.strokeStyle });
+                }
+            }
+            
+            function grey_pencil (){
+                
+                canvas.onmousedown = function (e){
+                    curX = e.clientX - canvas.offsetLeft;
+                    curY = e.clientY - canvas.offsetTop;
+                    hold = true;
+                    
+                    prevX = curX;
+                    prevY = curY;
+                    ctx.beginPath();
+                    ctx.moveTo(prevX, prevY);
+                };
+                
+                canvas.onmousemove = function (e){
+                    if(hold){
+                        curX = e.clientX - canvas.offsetLeft;
+                        curY = e.clientY - canvas.offsetTop;
+                        draw();
+                    }
+                };
+                
+                canvas.onmouseup = function (e){
+                    hold = false;
+                };
+                        
+                canvas.onmouseout = function (e){
+                    hold = false;
+                };
+                        
+                function draw (i){
+                    ctx.lineTo(curX, curY);
+                    ctx.stroke();
+                    
+                    ctx.strokeStyle = grey
+
+                    canvas_data.pencil.push({ "startx": prevX, "starty": prevY, "endx": curX, "endy": curY, 
+                            "thick": ctx.lineWidth, "color": ctx.strokeStyle });
+                }
+            }
+            
+            function add_pixel (){
+                ctx.lineWidth += 1;
+            }
+                        
+            function reduce_pixel (){
+                if (ctx.lineWidth == 2)
+                    return;
+                else
+                    ctx.lineWidth -= 1;
+            }
+                
+            function fill (){
+                fill_value = true;
+                stroke_value = false;
+            }
+                        
+            function outline (){
+                fill_value = false;
+                stroke_value = true;
+            }
+                
+            function save (){
+                
+                var data = canvas.toDataURL("image/png");
+                
+                $.ajax({
+                    type: "POST",
+                    data: {
+                        saved_canvas: data
+                    }
+                });
+            } 
+                
+        </script>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+                <center>
+                    <a href="http://127.0.0.1:5000/inputs/{{ circuit_name }}/{{ gene_nodes }}/{{ output_nodes }}/{{ input_nodes }}/{{ max_expression }}/{{ time_span }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add Inputs</a>
+                </center>
+        </div>
+    </div>
+    
+{% endblock %}
