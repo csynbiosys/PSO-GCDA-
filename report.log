@@ -1,0 +1,2372 @@
+2019-12-17 14:04:16,190 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-17 14:04:19,902 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:04:19] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-17 14:04:35,499 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:04:35] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-17 14:04:35,532 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:04:35] "[37mGET /outputs/test6/5/2/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-17 14:04:51,389 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:04:51] "[37mGET /inputs/test6/5/2/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-17 14:04:54,614 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:04:54] "[37mGET /home HTTP/1.1[0m" 200 -
+2019-12-17 14:04:55,987 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:04:55] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-17 14:05:13,448 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:05:13] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-17 14:05:13,467 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:05:13] "[37mGET /outputs/test8/5/2/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-17 14:05:24,441 - app - ERROR - Exception on /outputs/test8/5/2/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 64, in out_time_series
+    decode_io(circuit_name, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/test8.txt'
+2019-12-17 14:05:24,451 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:05:24] "[1m[35mPOST /outputs/test8/5/2/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-17 14:05:27,369 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:05:27] "[37mGET /inputs/test8/5/2/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-17 14:05:42,834 - app - ERROR - Exception on /inputs/test8/5/2/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 86, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test8.txt'
+2019-12-17 14:05:42,835 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:05:42] "[1m[35mPOST /inputs/test8/5/2/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-17 14:05:47,719 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:05:47] "[37mGET /check_build/test8/5/2/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-17 14:05:47,753 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:05:47] "[37mGET /static/outputs/extracted/test80.png HTTP/1.1[0m" 200 -
+2019-12-17 14:05:47,855 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:05:47] "[37mGET /static/outputs/extracted/test81.png HTTP/1.1[0m" 200 -
+2019-12-17 14:05:47,857 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:05:47] "[37mGET /static/inputs/extracted/test80.png HTTP/1.1[0m" 200 -
+2019-12-17 14:05:47,862 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:05:47] "[37mGET /static/inputs/extracted/test81.png HTTP/1.1[0m" 200 -
+2019-12-17 14:06:17,689 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:06:17] "[37mGET /building/test8/5/2/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-17 14:06:18,086 - app - ERROR - Exception on /circuit_build/test8/5/2/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 49, in build_circuit
+    targets = get_time_series(circuit_name, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 43, in get_time_series
+    f = open('/static/' + folder +'/extracted' + circuit_name + str(t), 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: '/static/outputs/extractedtest80'
+2019-12-17 14:06:18,088 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:06:18] "[1m[35mGET /circuit_build/test8/5/2/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-17 14:06:55,358 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-17 14:06:57,231 - app - ERROR - Exception on /circuit_build/test8/5/2/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 49, in build_circuit
+    targets = get_time_series(circuit_name, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 43, in get_time_series
+    f = open('/static/' + folder +'/extracted/' + circuit_name + str(t), 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: '/static/outputs/extracted/test80'
+2019-12-17 14:06:57,250 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:06:57] "[1m[35mGET /circuit_build/test8/5/2/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-17 14:07:34,426 - app - ERROR - Exception on /circuit_build/test8/5/2/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 49, in build_circuit
+    targets = get_time_series(circuit_name, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 43, in get_time_series
+    f = open('/static/' + folder +'/extracted/' + circuit_name + str(t), 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: '/static/outputs/extracted/test80'
+2019-12-17 14:07:34,428 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:07:34] "[1m[35mGET /circuit_build/test8/5/2/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-17 14:13:08,165 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-17 14:13:11,885 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:13:11] "[37mGET / HTTP/1.1[0m" 200 -
+2019-12-17 14:13:15,382 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:13:15] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-17 14:13:34,101 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:13:34] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-17 14:13:34,138 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:13:34] "[37mGET /outputs/test9/5/2/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-17 14:13:45,870 - app - ERROR - Exception on /outputs/test9/5/2/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 64, in out_time_series
+    decode_io(circuit_name, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/test9.txt'
+2019-12-17 14:13:45,883 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:13:45] "[1m[35mPOST /outputs/test9/5/2/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-17 14:13:47,472 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:13:47] "[37mGET /inputs/test9/5/2/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-17 14:14:02,805 - app - ERROR - Exception on /inputs/test9/5/2/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 86, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test9.txt'
+2019-12-17 14:14:02,807 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:14:02] "[1m[35mPOST /inputs/test9/5/2/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-17 14:14:09,924 - app - ERROR - Exception on /inputs/test9/5/2/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 86, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test9.txt'
+2019-12-17 14:14:09,926 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:14:09] "[1m[35mPOST /inputs/test9/5/2/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-17 14:14:13,655 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:14:13] "[37mGET /check_build/test9/5/2/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-17 14:14:13,689 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:14:13] "[37mGET /static/outputs/extracted/test90.png HTTP/1.1[0m" 200 -
+2019-12-17 14:14:13,795 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:14:13] "[37mGET /static/outputs/extracted/test91.png HTTP/1.1[0m" 200 -
+2019-12-17 14:14:13,802 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:14:13] "[37mGET /static/inputs/extracted/test91.png HTTP/1.1[0m" 200 -
+2019-12-17 14:14:13,806 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:14:13] "[37mGET /static/inputs/extracted/test90.png HTTP/1.1[0m" 200 -
+2019-12-17 14:14:21,678 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:14:21] "[37mGET /building/test9/5/2/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-17 14:14:21,954 - app - ERROR - Exception on /circuit_build/test9/5/2/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 49, in build_circuit
+    targets = get_time_series(circuit_name, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 43, in get_time_series
+    f = open('/static/' + folder +'/extracted/' + circuit_name + str(t) + '.pickle', 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: '/static/outputs/extracted/test90.pickle'
+2019-12-17 14:14:21,957 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:14:21] "[1m[35mGET /circuit_build/test9/5/2/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-17 14:15:24,839 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-17 14:15:25,169 - app - ERROR - Exception on /circuit_build/test9/5/2/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 53, in build_circuit
+    rate = rates.Rates(gene_nodes, get_dimensions(gene_nodes, input_nodes))
+NameError: name 'rates' is not defined
+2019-12-17 14:15:25,186 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:15:25] "[1m[35mGET /circuit_build/test9/5/2/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-17 14:16:24,960 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-17 14:16:27,783 - app - ERROR - Exception on /circuit_build/test9/5/2/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 53, in build_circuit
+    rate = Rates(gene_nodes, get_dimensions(gene_nodes, input_nodes))
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 14, in get_dimensions
+    return ((gene_count) + (gene_count**2) + (input_count*gene_count))
+TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'int'
+2019-12-17 14:16:27,799 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:16:27] "[1m[35mGET /circuit_build/test9/5/2/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-17 14:17:15,319 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-17 14:17:16,484 - app - ERROR - Exception on /circuit_build/test9/5/2/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 76, in build_circuit
+    opt = pso_topology.PSO_topology(100,
+NameError: name 'pso_topology' is not defined
+2019-12-17 14:17:16,504 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:17:16] "[1m[35mGET /circuit_build/test9/5/2/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-17 14:19:59,761 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-17 14:20:02,526 - app - ERROR - Exception on /circuit_build/test9/5/2/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 79, in build_circuit
+    rate.get_bounds(),
+  File "/home/freddie/PhD/Flask GCDA/app/rates.py", line 10, in get_bounds
+    bounds = ([1. for i in range(self.gene_count)] + [-300. for i in range(self.dimensions - self.gene_count)], [5. for i in range(self.gene_count)] + [300. for i in range(self.dimensions  - self.gene_count)])
+TypeError: 'str' object cannot be interpreted as an integer
+2019-12-17 14:20:02,542 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:20:02] "[1m[35mGET /circuit_build/test9/5/2/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-17 14:20:24,989 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-17 14:20:25,619 - pyswarms.single.global_best - INFO - Optimize for 750 iters with {'c2': 2.7, 'c1': 1.3, 'w': 0.3}
+2019-12-17 14:20:26,770 - app - ERROR - Exception on /circuit_build/test9/5/2/2/2000/1000 [GET]
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/pool.py", line 119, in worker
+    result = (True, func(*args, **kwds))
+  File "/usr/lib/python3.5/multiprocessing/pool.py", line 44, in mapstar
+    return list(map(*args))
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 70, in swarm_cost
+    return [self.particle_cost(p) for p in particle_swarm]
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 70, in <listcomp>
+    return [self.particle_cost(p) for p in particle_swarm]
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 60, in particle_cost
+    model = systems.Systems(self.param_known + list(particle), self.genes, self.inputs)
+NameError: name 'systems' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 91, in build_circuit
+    cost, pos = opt.swarm()
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 75, in swarm
+    cost, pos = circuit_swarm.optimize(self.swarm_cost, iters=self.loops, n_processes=self.processes)
+  File "/usr/local/lib/python3.5/dist-packages/pyswarms/single/global_best.py", line 184, in optimize
+    self.swarm.current_cost = compute_objective_function(self.swarm, objective_func, pool=pool, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/pyswarms/backend/operators.py", line 243, in compute_objective_function
+    np.array_split(swarm.position, pool._processes),
+  File "/usr/lib/python3.5/multiprocessing/pool.py", line 260, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+  File "/usr/lib/python3.5/multiprocessing/pool.py", line 608, in get
+    raise self._value
+NameError: name 'systems' is not defined
+2019-12-17 14:20:27,307 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:20:27] "[1m[35mGET /circuit_build/test9/5/2/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-17 14:21:55,159 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-17 14:21:57,110 - pyswarms.single.global_best - INFO - Optimize for 750 iters with {'c2': 2.7, 'c1': 1.3, 'w': 0.3}
+2019-12-17 14:21:57,978 - app - ERROR - Exception on /circuit_build/test9/5/2/2/2000/1000 [GET]
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/pool.py", line 119, in worker
+    result = (True, func(*args, **kwds))
+  File "/usr/lib/python3.5/multiprocessing/pool.py", line 44, in mapstar
+    return list(map(*args))
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 70, in swarm_cost
+    return [self.particle_cost(p) for p in particle_swarm]
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 70, in <listcomp>
+    return [self.particle_cost(p) for p in particle_swarm]
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 60, in particle_cost
+    model = Systems(self.param_known + list(particle), self.genes, self.inputs)
+  File "/home/freddie/PhD/Flask GCDA/app/systems.py", line 17, in __init__
+    self.params = params[:5*genes]
+TypeError: slice indices must be integers or None or have an __index__ method
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 91, in build_circuit
+    cost, pos = opt.swarm()
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 75, in swarm
+    cost, pos = circuit_swarm.optimize(self.swarm_cost, iters=self.loops, n_processes=self.processes)
+  File "/usr/local/lib/python3.5/dist-packages/pyswarms/single/global_best.py", line 184, in optimize
+    self.swarm.current_cost = compute_objective_function(self.swarm, objective_func, pool=pool, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/pyswarms/backend/operators.py", line 243, in compute_objective_function
+    np.array_split(swarm.position, pool._processes),
+  File "/usr/lib/python3.5/multiprocessing/pool.py", line 260, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+  File "/usr/lib/python3.5/multiprocessing/pool.py", line 608, in get
+    raise self._value
+TypeError: slice indices must be integers or None or have an __index__ method
+2019-12-17 14:21:58,034 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:21:58] "[1m[35mGET /circuit_build/test9/5/2/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-17 14:23:02,201 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-17 14:23:03,743 - pyswarms.single.global_best - INFO - Optimize for 750 iters with {'w': 0.3, 'c1': 1.3, 'c2': 2.7}
+2019-12-17 14:56:39,786 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-17 14:56:41,792 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:56:41] "[37mGET / HTTP/1.1[0m" 200 -
+2019-12-17 14:56:43,608 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:56:43] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-17 14:57:07,994 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:57:07] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-17 14:57:08,029 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:57:08] "[37mGET /outputs/test/3/1/2/2000/500 HTTP/1.1[0m" 200 -
+2019-12-17 14:57:34,836 - app - ERROR - Exception on /outputs/test/3/1/2/2000/500 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 64, in out_time_series
+    decode_io(circuit_name, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/test.txt'
+2019-12-17 14:57:34,847 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:57:34] "[1m[35mPOST /outputs/test/3/1/2/2000/500 HTTP/1.1[0m" 500 -
+2019-12-17 14:57:36,462 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:57:36] "[37mGET /inputs/test/3/1/2/2000/500 HTTP/1.1[0m" 200 -
+2019-12-17 14:58:00,567 - app - ERROR - Exception on /check_build/test/3/1/2/2000/500 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 92, in check_build
+    image_handling(circuit_name, max_expression, time_span, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 108, in image_handling
+    smoothed = [smoothing(ts, time_span) for ts in rescaled]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 108, in <listcomp>
+    smoothed = [smoothing(ts, time_span) for ts in rescaled]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 90, in smoothing
+    uspl = UnivariateSpline([x[0] for x in filtered_time_series], [y[1] for y in filtered_time_series])
+  File "/usr/local/lib/python3.5/dist-packages/scipy/interpolate/fitpack2.py", line 176, in __init__
+    raise ValueError('x must be strictly increasing')
+ValueError: x must be strictly increasing
+2019-12-17 14:58:00,761 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:58:00] "[1m[35mGET /check_build/test/3/1/2/2000/500 HTTP/1.1[0m" 500 -
+2019-12-17 14:58:11,448 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:58:11] "[37mGET / HTTP/1.1[0m" 200 -
+2019-12-17 14:58:13,033 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:58:13] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-17 14:58:38,955 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:58:38] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-17 14:58:38,973 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:58:38] "[37mGET /outputs/test56/3/1/1/2000/500 HTTP/1.1[0m" 200 -
+2019-12-17 14:58:57,879 - app - ERROR - Exception on /outputs/test56/3/1/1/2000/500 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 64, in out_time_series
+    decode_io(circuit_name, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/test56.txt'
+2019-12-17 14:58:57,881 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:58:57] "[1m[35mPOST /outputs/test56/3/1/1/2000/500 HTTP/1.1[0m" 500 -
+2019-12-17 14:58:59,120 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:58:59] "[37mGET /inputs/test56/3/1/1/2000/500 HTTP/1.1[0m" 200 -
+2019-12-17 14:59:06,837 - app - ERROR - Exception on /inputs/test56/3/1/1/2000/500 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 86, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test56.txt'
+2019-12-17 14:59:06,839 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:59:06] "[1m[35mPOST /inputs/test56/3/1/1/2000/500 HTTP/1.1[0m" 500 -
+2019-12-17 14:59:10,666 - app - ERROR - Exception on /check_build/test56/3/1/1/2000/500 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 92, in check_build
+    image_handling(circuit_name, max_expression, time_span, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 108, in image_handling
+    smoothed = [smoothing(ts, time_span) for ts in rescaled]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 108, in <listcomp>
+    smoothed = [smoothing(ts, time_span) for ts in rescaled]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 90, in smoothing
+    uspl = UnivariateSpline([x[0] for x in filtered_time_series], [y[1] for y in filtered_time_series])
+  File "/usr/local/lib/python3.5/dist-packages/scipy/interpolate/fitpack2.py", line 176, in __init__
+    raise ValueError('x must be strictly increasing')
+ValueError: x must be strictly increasing
+2019-12-17 14:59:10,667 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:59:10] "[1m[35mGET /check_build/test56/3/1/1/2000/500 HTTP/1.1[0m" 500 -
+2019-12-17 14:59:22,850 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:59:22] "[37mGET / HTTP/1.1[0m" 200 -
+2019-12-17 14:59:24,494 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:59:24] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-17 14:59:53,868 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:59:53] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-17 14:59:53,878 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 14:59:53] "[37mGET /outputs/test57/3/1/1/2000/250 HTTP/1.1[0m" 200 -
+2019-12-17 15:00:08,777 - app - ERROR - Exception on /outputs/test57/3/1/1/2000/250 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 64, in out_time_series
+    decode_io(circuit_name, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/test57.txt'
+2019-12-17 15:00:08,779 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:00:08] "[1m[35mPOST /outputs/test57/3/1/1/2000/250 HTTP/1.1[0m" 500 -
+2019-12-17 15:00:10,618 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:00:10] "[37mGET /inputs/test57/3/1/1/2000/250 HTTP/1.1[0m" 200 -
+2019-12-17 15:00:16,651 - app - ERROR - Exception on /inputs/test57/3/1/1/2000/250 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 86, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test57.txt'
+2019-12-17 15:00:16,652 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:00:16] "[1m[35mPOST /inputs/test57/3/1/1/2000/250 HTTP/1.1[0m" 500 -
+2019-12-17 15:00:20,142 - app - ERROR - Exception on /check_build/test57/3/1/1/2000/250 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 92, in check_build
+    image_handling(circuit_name, max_expression, time_span, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 108, in image_handling
+    smoothed = [smoothing(ts, time_span) for ts in rescaled]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 108, in <listcomp>
+    smoothed = [smoothing(ts, time_span) for ts in rescaled]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 90, in smoothing
+    uspl = UnivariateSpline([x[0] for x in filtered_time_series], [y[1] for y in filtered_time_series])
+  File "/usr/local/lib/python3.5/dist-packages/scipy/interpolate/fitpack2.py", line 176, in __init__
+    raise ValueError('x must be strictly increasing')
+ValueError: x must be strictly increasing
+2019-12-17 15:00:20,144 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:00:20] "[1m[35mGET /check_build/test57/3/1/1/2000/250 HTTP/1.1[0m" 500 -
+2019-12-17 15:00:28,883 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:00:28] "[37mGET / HTTP/1.1[0m" 200 -
+2019-12-17 15:00:30,495 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:00:30] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-17 15:01:01,281 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:01:01] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-17 15:01:01,292 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:01:01] "[37mGET /outputs/test6/3/1/1/1000/200 HTTP/1.1[0m" 200 -
+2019-12-17 15:01:16,147 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:01:16] "[37mGET /inputs/test6/3/1/1/1000/200 HTTP/1.1[0m" 200 -
+2019-12-17 15:01:16,827 - app - ERROR - Exception on /outputs/test6/3/1/1/1000/200 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 64, in out_time_series
+    decode_io(circuit_name, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/test6.txt'
+2019-12-17 15:01:16,829 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:01:16] "[1m[35mPOST /outputs/test6/3/1/1/1000/200 HTTP/1.1[0m" 500 -
+2019-12-17 15:01:24,401 - app - ERROR - Exception on /inputs/test6/3/1/1/1000/200 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 86, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test6.txt'
+2019-12-17 15:01:24,403 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:01:24] "[1m[35mPOST /inputs/test6/3/1/1/1000/200 HTTP/1.1[0m" 500 -
+2019-12-17 15:01:26,740 - app - ERROR - Exception on /check_build/test6/3/1/1/1000/200 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 92, in check_build
+    image_handling(circuit_name, max_expression, time_span, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 108, in image_handling
+    smoothed = [smoothing(ts, time_span) for ts in rescaled]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 108, in <listcomp>
+    smoothed = [smoothing(ts, time_span) for ts in rescaled]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 90, in smoothing
+    uspl = UnivariateSpline([x[0] for x in filtered_time_series], [y[1] for y in filtered_time_series])
+  File "/usr/local/lib/python3.5/dist-packages/scipy/interpolate/fitpack2.py", line 185, in __init__
+    xb=bbox[0],xe=bbox[1],s=s)
+dfitpack.error: (m>k) failed for hidden m: fpcurf0:m=0
+2019-12-17 15:01:26,741 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:01:26] "[1m[35mGET /check_build/test6/3/1/1/1000/200 HTTP/1.1[0m" 500 -
+2019-12-17 15:02:37,285 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-17 15:02:39,847 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:02:39] "[37mGET / HTTP/1.1[0m" 200 -
+2019-12-17 15:02:41,192 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:02:41] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-17 15:02:58,305 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:02:58] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-17 15:02:58,342 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:02:58] "[37mGET /outputs/test12/3/1/1/1000/200 HTTP/1.1[0m" 200 -
+2019-12-17 15:03:09,533 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:03:09] "[37mGET /inputs/test12/3/1/1/1000/200 HTTP/1.1[0m" 200 -
+2019-12-17 15:03:09,680 - app - ERROR - Exception on /outputs/test12/3/1/1/1000/200 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 64, in out_time_series
+    decode_io(circuit_name, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/test12.txt'
+2019-12-17 15:03:09,695 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:03:09] "[1m[35mPOST /outputs/test12/3/1/1/1000/200 HTTP/1.1[0m" 500 -
+2019-12-17 15:03:15,720 - app - ERROR - Exception on /inputs/test12/3/1/1/1000/200 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 86, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test12.txt'
+2019-12-17 15:03:15,722 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:03:15] "[1m[35mPOST /inputs/test12/3/1/1/1000/200 HTTP/1.1[0m" 500 -
+2019-12-17 15:03:18,065 - app - ERROR - Exception on /check_build/test12/3/1/1/1000/200 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 92, in check_build
+    image_handling(circuit_name, max_expression, time_span, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 108, in image_handling
+    smoothed = [smoothing(ts, time_span) for ts in rescaled]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 108, in <listcomp>
+    smoothed = [smoothing(ts, time_span) for ts in rescaled]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 90, in smoothing
+    uspl = UnivariateSpline([x[0] for x in filtered_time_series], [y[1] for y in filtered_time_series])
+  File "/usr/local/lib/python3.5/dist-packages/scipy/interpolate/fitpack2.py", line 176, in __init__
+    raise ValueError('x must be strictly increasing')
+ValueError: x must be strictly increasing
+2019-12-17 15:03:18,067 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:03:18] "[1m[35mGET /check_build/test12/3/1/1/1000/200 HTTP/1.1[0m" 500 -
+2019-12-17 15:03:56,401 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:03:56] "[37mGET / HTTP/1.1[0m" 200 -
+2019-12-17 15:03:57,935 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:03:57] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-17 15:04:23,398 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:04:23] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-17 15:04:23,410 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:04:23] "[37mGET /outputs/test121/3/1/2/1000/200 HTTP/1.1[0m" 200 -
+2019-12-17 15:04:42,138 - app - ERROR - Exception on /outputs/test121/3/1/2/1000/200 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 64, in out_time_series
+    decode_io(circuit_name, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/test121.txt'
+2019-12-17 15:04:42,140 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:04:42] "[1m[35mPOST /outputs/test121/3/1/2/1000/200 HTTP/1.1[0m" 500 -
+2019-12-17 15:04:45,027 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:04:45] "[37mGET /inputs/test121/3/1/2/1000/200 HTTP/1.1[0m" 200 -
+2019-12-17 15:05:35,331 - app - ERROR - Exception on /inputs/test121/3/1/2/1000/200 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 86, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test121.txt'
+2019-12-17 15:05:35,333 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:05:35] "[1m[35mPOST /inputs/test121/3/1/2/1000/200 HTTP/1.1[0m" 500 -
+2019-12-17 15:05:37,146 - app - ERROR - Exception on /check_build/test121/3/1/2/1000/200 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 92, in check_build
+    image_handling(circuit_name, max_expression, time_span, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 108, in image_handling
+    smoothed = [smoothing(ts, time_span) for ts in rescaled]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 108, in <listcomp>
+    smoothed = [smoothing(ts, time_span) for ts in rescaled]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 90, in smoothing
+    uspl = UnivariateSpline([x[0] for x in filtered_time_series], [y[1] for y in filtered_time_series])
+  File "/usr/local/lib/python3.5/dist-packages/scipy/interpolate/fitpack2.py", line 176, in __init__
+    raise ValueError('x must be strictly increasing')
+ValueError: x must be strictly increasing
+2019-12-17 15:05:37,148 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:05:37] "[1m[35mGET /check_build/test121/3/1/2/1000/200 HTTP/1.1[0m" 500 -
+2019-12-17 15:05:50,412 - werkzeug - INFO - 127.0.0.1 - - [17/Dec/2019 15:05:50] "[37mGET / HTTP/1.1[0m" 200 -
+2019-12-18 10:46:24,100 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 10:46:27,711 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:46:27] "[37mGET / HTTP/1.1[0m" 200 -
+2019-12-18 10:46:27,749 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:46:27] "[37mGET /static/home_banner.png HTTP/1.1[0m" 200 -
+2019-12-18 10:46:28,037 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:46:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2019-12-18 10:46:32,326 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:46:32] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-18 10:47:07,918 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:47:07] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-18 10:47:07,953 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:47:07] "[37mGET /outputs/test13/2/1/2/2000/500 HTTP/1.1[0m" 200 -
+2019-12-18 10:47:20,624 - app - ERROR - Exception on /outputs/test13/2/1/2/2000/500 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 64, in out_time_series
+    decode_io(circuit_name, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/test13.txt'
+2019-12-18 10:47:20,627 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:47:20] "[1m[35mPOST /outputs/test13/2/1/2/2000/500 HTTP/1.1[0m" 500 -
+2019-12-18 10:47:22,864 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:47:22] "[37mGET /inputs/test13/2/1/2/2000/500 HTTP/1.1[0m" 200 -
+2019-12-18 10:48:50,384 - app - ERROR - Exception on /inputs/test13/2/1/2/2000/500 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 86, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test13.txt'
+2019-12-18 10:48:50,385 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:48:50] "[1m[35mPOST /inputs/test13/2/1/2/2000/500 HTTP/1.1[0m" 500 -
+2019-12-18 10:48:52,478 - app - ERROR - Exception on /check_build/test13/2/1/2/2000/500 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 92, in check_build
+    image_handling(circuit_name, max_expression, time_span, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 108, in image_handling
+    smoothed = [smoothing(ts, time_span) for ts in rescaled]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 108, in <listcomp>
+    smoothed = [smoothing(ts, time_span) for ts in rescaled]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 90, in smoothing
+    uspl = UnivariateSpline([x[0] for x in filtered_time_series], [y[1] for y in filtered_time_series])
+  File "/usr/local/lib/python3.5/dist-packages/scipy/interpolate/fitpack2.py", line 176, in __init__
+    raise ValueError('x must be strictly increasing')
+ValueError: x must be strictly increasing
+2019-12-18 10:48:52,480 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:48:52] "[1m[35mGET /check_build/test13/2/1/2/2000/500 HTTP/1.1[0m" 500 -
+2019-12-18 10:49:15,322 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:49:15] "[37mGET /inputs/test13/2/1/2/2000/500 HTTP/1.1[0m" 200 -
+2019-12-18 10:49:40,375 - app - ERROR - Exception on /inputs/test13/2/1/2/2000/500 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 86, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test13.txt'
+2019-12-18 10:49:40,377 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:49:40] "[1m[35mPOST /inputs/test13/2/1/2/2000/500 HTTP/1.1[0m" 500 -
+2019-12-18 10:49:43,913 - app - ERROR - Exception on /check_build/test13/2/1/2/2000/500 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 92, in check_build
+    image_handling(circuit_name, max_expression, time_span, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 108, in image_handling
+    smoothed = [smoothing(ts, time_span) for ts in rescaled]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 108, in <listcomp>
+    smoothed = [smoothing(ts, time_span) for ts in rescaled]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 90, in smoothing
+    uspl = UnivariateSpline([x[0] for x in filtered_time_series], [y[1] for y in filtered_time_series])
+  File "/usr/local/lib/python3.5/dist-packages/scipy/interpolate/fitpack2.py", line 176, in __init__
+    raise ValueError('x must be strictly increasing')
+ValueError: x must be strictly increasing
+2019-12-18 10:49:43,915 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:49:43] "[1m[35mGET /check_build/test13/2/1/2/2000/500 HTTP/1.1[0m" 500 -
+2019-12-18 10:49:58,188 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:49:58] "[37mGET / HTTP/1.1[0m" 200 -
+2019-12-18 10:52:16,669 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 10:52:18,322 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:52:18] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-18 10:52:38,395 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:52:38] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-18 10:52:38,427 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:52:38] "[37mGET /outputs/test12/2/1/2/2000/500 HTTP/1.1[0m" 200 -
+2019-12-18 10:52:54,448 - app - ERROR - Exception on /outputs/test12/2/1/2/2000/500 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 64, in out_time_series
+    decode_io(circuit_name, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/test12.txt'
+2019-12-18 10:52:54,460 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:52:54] "[1m[35mPOST /outputs/test12/2/1/2/2000/500 HTTP/1.1[0m" 500 -
+2019-12-18 10:52:56,890 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:52:56] "[37mGET /inputs/test12/2/1/2/2000/500 HTTP/1.1[0m" 200 -
+2019-12-18 10:53:29,686 - app - ERROR - Exception on /inputs/test12/2/1/2/2000/500 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 86, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 18, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test12.txt'
+2019-12-18 10:53:29,688 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:53:29] "[1m[35mPOST /inputs/test12/2/1/2/2000/500 HTTP/1.1[0m" 500 -
+2019-12-18 10:53:31,590 - app - ERROR - Exception on /check_build/test12/2/1/2/2000/500 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 92, in check_build
+    image_handling(circuit_name, max_expression, time_span, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 109, in image_handling
+    [plot(s_ts[1], time_span, s_ts[0], circuit_name, max_expression, folder) for s_ts in enumerate(rescaled)]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 109, in <listcomp>
+    [plot(s_ts[1], time_span, s_ts[0], circuit_name, max_expression, folder) for s_ts in enumerate(rescaled)]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 100, in plot
+    plt.plot(list(range(int(time_span))), smoothed_time_series)
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/pyplot.py", line 3358, in plot
+    ret = ax.plot(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/__init__.py", line 1855, in inner
+    return func(ax, *args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/axes/_axes.py", line 1527, in plot
+    for line in self._get_lines(*args, **kwargs):
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/axes/_base.py", line 406, in _grab_next_args
+    for seg in self._plot_args(this, kwargs):
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/axes/_base.py", line 383, in _plot_args
+    x, y = self._xy_from_xy(x, y)
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/axes/_base.py", line 242, in _xy_from_xy
+    "have shapes {} and {}".format(x.shape, y.shape))
+ValueError: x and y must have same first dimension, but have shapes (500,) and (2270, 2)
+2019-12-18 10:53:33,810 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:53:33] "[1m[35mGET /check_build/test12/2/1/2/2000/500 HTTP/1.1[0m" 500 -
+2019-12-18 10:56:08,023 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 10:56:09,934 - app - ERROR - Exception on /check_build/test12/2/1/2/2000/500 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 92, in check_build
+    image_handling(circuit_name, max_expression, time_span, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 109, in image_handling
+    print(rescaled, file=stderr)
+NameError: name 'stderr' is not defined
+2019-12-18 10:56:09,945 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:56:09] "[1m[35mGET /check_build/test12/2/1/2/2000/500 HTTP/1.1[0m" 500 -
+2019-12-18 10:56:40,472 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 10:56:43,293 - app - ERROR - Exception on /check_build/test12/2/1/2/2000/500 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 92, in check_build
+    image_handling(circuit_name, max_expression, time_span, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 110, in image_handling
+    [plot(s_ts[1], time_span, s_ts[0], circuit_name, max_expression, folder) for s_ts in enumerate(rescaled)]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 110, in <listcomp>
+    [plot(s_ts[1], time_span, s_ts[0], circuit_name, max_expression, folder) for s_ts in enumerate(rescaled)]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 100, in plot
+    plt.plot(list(range(int(time_span))), smoothed_time_series)
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/pyplot.py", line 3358, in plot
+    ret = ax.plot(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/__init__.py", line 1855, in inner
+    return func(ax, *args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/axes/_axes.py", line 1527, in plot
+    for line in self._get_lines(*args, **kwargs):
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/axes/_base.py", line 406, in _grab_next_args
+    for seg in self._plot_args(this, kwargs):
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/axes/_base.py", line 383, in _plot_args
+    x, y = self._xy_from_xy(x, y)
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/axes/_base.py", line 242, in _xy_from_xy
+    "have shapes {} and {}".format(x.shape, y.shape))
+ValueError: x and y must have same first dimension, but have shapes (500,) and (2270, 2)
+2019-12-18 10:56:43,313 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 10:56:43] "[1m[35mGET /check_build/test12/2/1/2/2000/500 HTTP/1.1[0m" 500 -
+2019-12-18 11:01:20,316 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 11:01:22,984 - app - ERROR - Exception on /check_build/test12/2/1/2/2000/500 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 92, in check_build
+    image_handling(circuit_name, max_expression, time_span, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 110, in image_handling
+    [plot(s_ts[1], time_span, s_ts[0], circuit_name, max_expression, folder) for s_ts in enumerate(rescaled)]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 110, in <listcomp>
+    [plot(s_ts[1], time_span, s_ts[0], circuit_name, max_expression, folder) for s_ts in enumerate(rescaled)]
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 100, in plot
+    plt.plot(list(range(int(time_span))), smoothed_time_series[1])
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/pyplot.py", line 3358, in plot
+    ret = ax.plot(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/__init__.py", line 1855, in inner
+    return func(ax, *args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/axes/_axes.py", line 1527, in plot
+    for line in self._get_lines(*args, **kwargs):
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/axes/_base.py", line 406, in _grab_next_args
+    for seg in self._plot_args(this, kwargs):
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/axes/_base.py", line 383, in _plot_args
+    x, y = self._xy_from_xy(x, y)
+  File "/usr/local/lib/python3.5/dist-packages/matplotlib/axes/_base.py", line 242, in _xy_from_xy
+    "have shapes {} and {}".format(x.shape, y.shape))
+ValueError: x and y must have same first dimension, but have shapes (500,) and (2,)
+2019-12-18 11:01:23,002 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:01:23] "[1m[35mGET /check_build/test12/2/1/2/2000/500 HTTP/1.1[0m" 500 -
+2019-12-18 11:13:47,590 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 11:13:53,820 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:13:53] "[37mGET / HTTP/1.1[0m" 200 -
+2019-12-18 11:13:55,372 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:13:55] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-18 11:14:18,702 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:14:18] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-18 11:14:18,739 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:14:18] "[37mGET /outputs/test13/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:14:28,637 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:14:28] "[37mGET /outputs/test13/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:14:43,199 - app - ERROR - Exception on /outputs/test13/2/1/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 64, in out_time_series
+    decode_io(circuit_name, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 19, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/test13.txt'
+2019-12-18 11:14:43,211 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:14:43] "[1m[35mPOST /outputs/test13/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 11:14:47,780 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:14:47] "[37mGET /inputs/test13/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:15:06,977 - app - ERROR - Exception on /inputs/test13/2/1/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 86, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 19, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test13.txt'
+2019-12-18 11:15:06,979 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:15:06] "[1m[35mPOST /inputs/test13/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 11:15:10,721 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:15:10] "[37mGET /check_build/test13/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:15:10,769 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:15:10] "[37mGET /static/outputs/extracted/test130.png HTTP/1.1[0m" 200 -
+2019-12-18 11:15:10,865 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:15:10] "[37mGET /static/inputs/extracted/test130.png HTTP/1.1[0m" 200 -
+2019-12-18 11:15:10,866 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:15:10] "[37mGET /static/inputs/extracted/test131.png HTTP/1.1[0m" 200 -
+2019-12-18 11:15:16,992 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:15:16] "[37mGET /building/test13/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:15:17,355 - pyswarms.single.global_best - INFO - Optimize for 750 iters with {'c1': 1.3, 'c2': 2.7, 'w': 0.3}
+2019-12-18 11:15:18,640 - app - ERROR - Exception on /circuit_build/test13/2/1/2/2000/1000 [GET]
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/pool.py", line 119, in worker
+    result = (True, func(*args, **kwds))
+  File "/usr/lib/python3.5/multiprocessing/pool.py", line 44, in mapstar
+    return list(map(*args))
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 70, in swarm_cost
+    return [self.particle_cost(p) for p in particle_swarm]
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 70, in <listcomp>
+    return [self.particle_cost(p) for p in particle_swarm]
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 63, in particle_cost
+    return sum([mean_squared_error(self.target[t], result_sys[:, t]) for t in range(len(self.target))]) + (self.param_penalty * num_active_edges)
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 63, in <listcomp>
+    return sum([mean_squared_error(self.target[t], result_sys[:, t]) for t in range(len(self.target))]) + (self.param_penalty * num_active_edges)
+  File "/usr/local/lib/python3.5/dist-packages/sklearn/metrics/regression.py", line 241, in mean_squared_error
+    y_true, y_pred, multioutput)
+  File "/usr/local/lib/python3.5/dist-packages/sklearn/metrics/regression.py", line 79, in _check_reg_targets
+    y_pred = check_array(y_pred, ensure_2d=False)
+  File "/usr/local/lib/python3.5/dist-packages/sklearn/utils/validation.py", line 542, in check_array
+    allow_nan=force_all_finite == 'allow-nan')
+  File "/usr/local/lib/python3.5/dist-packages/sklearn/utils/validation.py", line 56, in _assert_all_finite
+    raise ValueError(msg_err.format(type_err, X.dtype))
+ValueError: Input contains NaN, infinity or a value too large for dtype('float64').
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 91, in build_circuit
+    cost, pos = opt.swarm()
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 75, in swarm
+    cost, pos = circuit_swarm.optimize(self.swarm_cost, iters=self.loops, n_processes=self.processes)
+  File "/usr/local/lib/python3.5/dist-packages/pyswarms/single/global_best.py", line 184, in optimize
+    self.swarm.current_cost = compute_objective_function(self.swarm, objective_func, pool=pool, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/pyswarms/backend/operators.py", line 243, in compute_objective_function
+    np.array_split(swarm.position, pool._processes),
+  File "/usr/lib/python3.5/multiprocessing/pool.py", line 260, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+  File "/usr/lib/python3.5/multiprocessing/pool.py", line 608, in get
+    raise self._value
+ValueError: Input contains NaN, infinity or a value too large for dtype('float64').
+2019-12-18 11:15:18,645 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:15:18] "[1m[35mGET /circuit_build/test13/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 11:35:31,008 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 11:35:33,790 - pyswarms.single.global_best - INFO - Optimize for 750 iters with {'c1': 1.3, 'c2': 2.7, 'w': 0.3}
+2019-12-18 11:35:35,076 - app - ERROR - Exception on /circuit_build/test13/2/1/2/2000/1000 [GET]
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/pool.py", line 119, in worker
+    result = (True, func(*args, **kwds))
+  File "/usr/lib/python3.5/multiprocessing/pool.py", line 44, in mapstar
+    return list(map(*args))
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 74, in swarm_cost
+    return [self.particle_cost(p) for p in particle_swarm]
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 74, in <listcomp>
+    return [self.particle_cost(p) for p in particle_swarm]
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 67, in particle_cost
+    return sum([mean_squared_error(self.target[t], result_sys[:, t]) for t in range(len(self.target))]) + (self.param_penalty * num_active_edges)
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 67, in <listcomp>
+    return sum([mean_squared_error(self.target[t], result_sys[:, t]) for t in range(len(self.target))]) + (self.param_penalty * num_active_edges)
+  File "/usr/local/lib/python3.5/dist-packages/sklearn/metrics/regression.py", line 241, in mean_squared_error
+    y_true, y_pred, multioutput)
+  File "/usr/local/lib/python3.5/dist-packages/sklearn/metrics/regression.py", line 79, in _check_reg_targets
+    y_pred = check_array(y_pred, ensure_2d=False)
+  File "/usr/local/lib/python3.5/dist-packages/sklearn/utils/validation.py", line 542, in check_array
+    allow_nan=force_all_finite == 'allow-nan')
+  File "/usr/local/lib/python3.5/dist-packages/sklearn/utils/validation.py", line 56, in _assert_all_finite
+    raise ValueError(msg_err.format(type_err, X.dtype))
+ValueError: Input contains NaN, infinity or a value too large for dtype('float64').
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 91, in build_circuit
+    cost, pos = opt.swarm()
+  File "/home/freddie/PhD/Flask GCDA/app/pso_topology.py", line 79, in swarm
+    cost, pos = circuit_swarm.optimize(self.swarm_cost, iters=self.loops, n_processes=self.processes)
+  File "/usr/local/lib/python3.5/dist-packages/pyswarms/single/global_best.py", line 184, in optimize
+    self.swarm.current_cost = compute_objective_function(self.swarm, objective_func, pool=pool, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/pyswarms/backend/operators.py", line 243, in compute_objective_function
+    np.array_split(swarm.position, pool._processes),
+  File "/usr/lib/python3.5/multiprocessing/pool.py", line 260, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+  File "/usr/lib/python3.5/multiprocessing/pool.py", line 608, in get
+    raise self._value
+ValueError: Input contains NaN, infinity or a value too large for dtype('float64').
+2019-12-18 11:35:35,374 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:35:35] "[1m[35mGET /circuit_build/test13/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 11:42:56,219 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 11:43:01,711 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:43:01] "[37mGET / HTTP/1.1[0m" 200 -
+2019-12-18 11:43:03,547 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:43:03] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-18 11:43:27,717 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:43:27] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-18 11:43:27,753 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:43:27] "[37mGET /outputs/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:43:41,123 - app - ERROR - Exception on /outputs/test14/2/1/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 64, in out_time_series
+    decode_io(circuit_name, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 19, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/test14.txt'
+2019-12-18 11:43:41,134 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:43:41] "[1m[35mPOST /outputs/test14/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 11:43:43,941 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:43:43] "[37mGET /inputs/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:44:14,089 - app - ERROR - Exception on /inputs/test14/2/1/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 86, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 19, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test14.txt'
+2019-12-18 11:44:14,091 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:44:14] "[1m[35mPOST /inputs/test14/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 11:44:18,036 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:44:18] "[37mGET /check_build/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:44:18,068 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:44:18] "[37mGET /static/outputs/extracted/test140.png HTTP/1.1[0m" 200 -
+2019-12-18 11:44:18,162 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:44:18] "[37mGET /static/inputs/extracted/test140.png HTTP/1.1[0m" 200 -
+2019-12-18 11:44:18,166 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:44:18] "[37mGET /static/inputs/extracted/test141.png HTTP/1.1[0m" 200 -
+2019-12-18 11:44:30,968 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:44:30] "[37mGET /building/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:44:31,227 - pyswarms.single.global_best - INFO - Optimize for 750 iters with {'w': 0.3, 'c2': 2.7, 'c1': 1.3}
+2019-12-18 11:47:34,577 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 11:47:36,415 - pyswarms.single.global_best - INFO - Optimize for 750 iters with {'c2': 2.7, 'c1': 1.3, 'w': 0.3}
+2019-12-18 11:48:11,059 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 11:48:14,992 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:48:14] "[37mGET /check_build/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:48:19,365 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:48:19] "[37mGET /building/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:48:19,612 - pyswarms.single.global_best - INFO - Optimize for 750 iters with {'w': 0.3, 'c2': 2.7, 'c1': 1.3}
+2019-12-18 11:50:46,232 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 11:50:55,916 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:50:55] "[37mGET /building/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:50:56,177 - pyswarms.single.global_best - INFO - Optimize for 2 iters with {'c2': 2.7, 'c1': 1.3, 'w': 0.3}
+2019-12-18 11:50:57,797 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 48238357.43112379, best pos: [   4.96840942    4.93442549  117.57943999 -277.24868438  110.08326867
+    9.76197277   60.56967451  225.04191719  174.58535751 -298.30647189]
+2019-12-18 11:50:57,847 - app - ERROR - Exception on /circuit_build/test14/2/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 92, in build_circuit
+    print('Best Cost: ' + str(cost), file=stderr)
+NameError: name 'stderr' is not defined
+2019-12-18 11:50:57,861 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:50:57] "[1m[35mGET /circuit_build/test14/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 11:51:43,661 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 11:51:45,696 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:51:45] "[37mGET /building/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:51:45,965 - pyswarms.single.global_best - INFO - Optimize for 2 iters with {'c1': 1.3, 'c2': 2.7, 'w': 0.3}
+2019-12-18 11:51:52,275 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 822152.9354032616, best pos: [   3.90356333    1.2946289    17.46438852  296.06297924   30.51323526
+  299.91495516 -269.63595609 -203.28281863 -286.4705667   213.87057194]
+2019-12-18 11:51:52,323 - app - ERROR - Exception on /circuit_build/test14/2/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 94, in build_circuit
+    res = run_sys(rate.get_constant_params() + list(pos), gene_nodes, inputs, rate.get_init())
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 20, in run_sys
+    model = Systems(param_position, gene_count, inputs)
+  File "/home/freddie/PhD/Flask GCDA/app/systems.py", line 17, in __init__
+    self.params = params[:5*genes]
+TypeError: slice indices must be integers or None or have an __index__ method
+2019-12-18 11:51:52,339 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:51:52] "[1m[35mGET /circuit_build/test14/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 11:52:51,745 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 11:53:00,753 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:53:00] "[37mGET /building/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:53:01,035 - pyswarms.single.global_best - INFO - Optimize for 2 iters with {'w': 0.3, 'c2': 2.7, 'c1': 1.3}
+2019-12-18 11:53:07,581 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1175294.7990118167, best pos: [   1.11858461    2.71420263  116.39582982 -221.65297509   46.83725393
+ -189.04467808 -283.29035781   32.66153803  -16.69452794 -233.02685723]
+2019-12-18 11:53:07,629 - app - ERROR - Exception on /circuit_build/test14/2/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 94, in build_circuit
+    res = run_sys(rate.get_constant_params() + list(pos), gene_nodes, inputs, rate.get_init())
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 20, in run_sys
+    model = Systems(param_position, gene_count, inputs)
+  File "/home/freddie/PhD/Flask GCDA/app/systems.py", line 17, in __init__
+    self.params = params[:5*genes]
+TypeError: slice indices must be integers or None or have an __index__ method
+2019-12-18 11:53:07,644 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:53:07] "[1m[35mGET /circuit_build/test14/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 11:57:31,044 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 11:57:32,354 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:57:32] "[37mGET /building/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:57:32,623 - pyswarms.single.global_best - INFO - Optimize for 2 iters with {'c1': 1.3, 'w': 0.3, 'c2': 2.7}
+2019-12-18 11:57:37,789 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 4072090.1943842056, best pos: [   4.74473471    4.90908838   46.03677556  220.68082372 -202.86608564
+  256.37073802  -91.77969402   38.51055205 -269.10577579 -283.17663992]
+2019-12-18 11:57:45,417 - app - ERROR - Exception on /circuit_build/test14/2/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 95, in build_circuit
+    plot(res, 'app/static/builds/', target_files, gene_nodes)
+NameError: name 'target_files' is not defined
+2019-12-18 11:57:45,431 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:57:45] "[1m[35mGET /circuit_build/test14/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 11:58:56,451 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 11:59:01,163 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:59:01] "[37mGET /building/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:59:01,462 - pyswarms.single.global_best - INFO - Optimize for 2 iters with {'c1': 1.3, 'w': 0.3, 'c2': 2.7}
+2019-12-18 11:59:05,210 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2109980.4404757926, best pos: [   2.22750855    2.94923936 -130.42947367 -206.57158122  217.74163557
+  -11.33815795  -99.1625328    50.91248906  193.45378721 -100.95263846]
+2019-12-18 11:59:07,081 - app - ERROR - Exception on /circuit_build/test14/2/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 95, in build_circuit
+    plot(res, 'app/static/builds/', targets, gene_nodes)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 25, in plot
+    for i in range(gene_count*2):
+TypeError: 'str' object cannot be interpreted as an integer
+2019-12-18 11:59:07,095 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:59:07] "[1m[35mGET /circuit_build/test14/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 11:59:33,476 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 11:59:42,242 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:59:42] "[37mGET /building/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 11:59:42,524 - pyswarms.single.global_best - INFO - Optimize for 2 iters with {'w': 0.3, 'c2': 2.7, 'c1': 1.3}
+2019-12-18 11:59:46,428 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1538010.7487073594, best pos: [   2.92554997    1.68388172 -237.72838941   43.08029924  -24.45225509
+  254.4496685  -169.64663755   93.79734104 -218.43698652 -122.885124  ]
+2019-12-18 11:59:48,478 - app - ERROR - Exception on /circuit_build/test14/2/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 120, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 95, in build_circuit
+    plot(res, 'app/static/builds/', targets, int(gene_nodes))
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 30, in plot
+    plt.plot(list(range(1000)), read_target(target[i]))
+NameError: name 'read_target' is not defined
+2019-12-18 11:59:48,497 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 11:59:48] "[1m[35mGET /circuit_build/test14/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 12:00:37,701 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 12:00:41,998 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 12:00:41] "[37mGET /building/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 12:00:42,289 - pyswarms.single.global_best - INFO - Optimize for 2 iters with {'c2': 2.7, 'c1': 1.3, 'w': 0.3}
+2019-12-18 12:00:44,652 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2437479.6597575895, best pos: [   4.47451182    4.9169751    -3.92646152  271.54860428 -230.53733159
+  -73.30324392  266.04211673   27.87058405  -66.20554734  118.29078718]
+2019-12-18 12:00:45,939 - app - ERROR - Exception on /circuit_build/test14/2/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 121, in circuit_build
+    draw(circuit_name, gene_nodes, output_nodes, input_nodes, circuit)
+  File "/home/freddie/PhD/Flask GCDA/app/draw_circuit.py", line 13, in draw
+    inputs_labels = ['I' + str(l) for l in range(input_nodes)]
+TypeError: 'str' object cannot be interpreted as an integer
+2019-12-18 12:00:45,960 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 12:00:45] "[1m[35mGET /circuit_build/test14/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 12:04:54,404 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 12:04:58,232 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 12:04:58] "[37mGET /building/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 12:04:58,492 - pyswarms.single.global_best - INFO - Optimize for 2 iters with {'c1': 1.3, 'w': 0.3, 'c2': 2.7}
+2019-12-18 12:05:02,580 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2445518.475692914, best pos: [   4.98497381    1.41265198  114.57709124 -106.65314328 -154.60519296
+ -221.01570447  171.68390578  267.76391286  -70.92243681  134.3255626 ]
+2019-12-18 12:05:11,752 - app - ERROR - Exception on /circuit_build/test14/2/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 121, in circuit_build
+    draw(circuit_name, int(gene_nodes), int(output_nodes), int(input_nodes), circuit)
+  File "/home/freddie/PhD/Flask GCDA/app/draw_circuit.py", line 14, in draw
+    for o in output_nodes:
+TypeError: 'int' object is not iterable
+2019-12-18 12:05:11,769 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 12:05:11] "[1m[35mGET /circuit_build/test14/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 12:17:46,167 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 12:17:50,433 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 12:17:50] "[37mGET /building/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 12:17:50,691 - pyswarms.single.global_best - INFO - Optimize for 2 iters with {'c1': 1.3, 'c2': 2.7, 'w': 0.3}
+2019-12-18 12:17:53,448 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2424861.4612692688, best pos: [   3.87443395    3.34310836 -159.52143829  242.73570528  -24.88463912
+  232.73539267  -42.22937496 -134.61553286 -162.27661611 -185.00217201]
+2019-12-18 12:17:57,466 - app - ERROR - Exception on /circuit_build/test14/2/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 121, in circuit_build
+    draw(circuit_name, int(gene_nodes), int(output_nodes), int(input_nodes), circuit)
+  File "/home/freddie/PhD/Flask GCDA/app/draw_circuit.py", line 27, in draw
+    circuit_g.add_edges([(edge[0], edge[1])])
+  File "/usr/local/lib/python3.5/dist-packages/igraph/__init__.py", line 255, in add_edges
+    return GraphBase.add_edges(self, es)
+ValueError: no such vertex: 'I1'
+2019-12-18 12:18:02,479 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 12:18:02] "[1m[35mGET /circuit_build/test14/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 12:21:52,777 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 12:21:55,711 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 12:21:55] "[37mGET /building/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 12:21:55,995 - pyswarms.single.global_best - INFO - Optimize for 2 iters with {'w': 0.3, 'c1': 1.3, 'c2': 2.7}
+2019-12-18 12:21:58,474 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2445515.401387846, best pos: [ 3.03831897e+00  4.78854779e+00  2.89381236e+02  1.14451187e+02
+  2.97779674e+02  2.43582786e-02 -1.09489235e+02 -2.10449798e+02
+ -2.12808464e+02 -2.40523317e+02]
+2019-12-18 12:22:08,745 - app - ERROR - Exception on /circuit_build/test14/2/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 121, in circuit_build
+    draw(circuit_name, int(gene_nodes), int(output_nodes), int(input_nodes), circuit)
+  File "/home/freddie/PhD/Flask GCDA/app/draw_circuit.py", line 23, in draw
+    for node, label in [n for n in zip(node_labels, circuit[:node_nodes])]:
+NameError: name 'node_nodes' is not defined
+2019-12-18 12:22:08,765 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 12:22:08] "[1m[35mGET /circuit_build/test14/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 12:22:49,940 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 12:22:51,855 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 12:22:51] "[37mGET /building/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 12:22:52,112 - pyswarms.single.global_best - INFO - Optimize for 2 iters with {'c1': 1.3, 'w': 0.3, 'c2': 2.7}
+2019-12-18 12:22:57,773 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2414033.1796108293, best pos: [   4.19930979    3.63594008 -170.73232194 -251.22449279 -131.95339958
+ -266.65500979   -1.69730574 -160.84306068  286.0077832   251.69463784]
+2019-12-18 12:23:01,812 - app - ERROR - Exception on /circuit_build/test14/2/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 121, in circuit_build
+    draw(circuit_name, int(gene_nodes), int(output_nodes), int(input_nodes), circuit)
+  File "/home/freddie/PhD/Flask GCDA/app/draw_circuit.py", line 23, in draw
+    for node, label in [n for n in zip(node_labels, circuit[:node_nodes])]:
+NameError: name 'node_nodes' is not defined
+2019-12-18 12:23:01,831 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 12:23:01] "[1m[35mGET /circuit_build/test14/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 12:23:25,310 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 12:23:29,009 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 12:23:29] "[37mGET /building/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 12:23:29,264 - pyswarms.single.global_best - INFO - Optimize for 2 iters with {'c2': 2.7, 'c1': 1.3, 'w': 0.3}
+2019-12-18 12:23:32,447 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2444808.8816090156, best pos: [   1.60684413    2.40368235  186.41569876  154.28889511 -266.91410928
+ -168.62909561  272.86034101   77.82077703  248.22236802  165.62955847]
+2019-12-18 12:23:35,359 - app - ERROR - Exception on /circuit_build/test14/2/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 121, in circuit_build
+    draw(circuit_name, int(gene_nodes), int(output_nodes), int(input_nodes), circuit)
+  File "/home/freddie/PhD/Flask GCDA/app/draw_circuit.py", line 30, in draw
+    layout = self.circuit_g.layout('fr')
+NameError: name 'self' is not defined
+2019-12-18 12:23:35,377 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 12:23:35] "[1m[35mGET /circuit_build/test14/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 12:24:12,188 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 12:24:15,453 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 12:24:15] "[37mGET /building/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 12:24:15,711 - pyswarms.single.global_best - INFO - Optimize for 2 iters with {'w': 0.3, 'c1': 1.3, 'c2': 2.7}
+2019-12-18 12:24:20,103 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2037529.8027130128, best pos: [   2.25295956    1.70671892  181.56444799   43.42786141  150.41491338
+ -183.629944    188.38050131  -73.66899342 -117.71685854 -291.06115286]
+2019-12-18 12:24:54,212 - app - ERROR - Exception on /circuit_build/test14/2/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 121, in circuit_build
+    draw(circuit_name, int(gene_nodes), int(output_nodes), int(input_nodes), circuit)
+  File "/home/freddie/PhD/Flask GCDA/app/draw_circuit.py", line 40, in draw
+    out.save('/static/builds/' + circuit_name + '_viz.png')
+  File "/usr/local/lib/python3.5/dist-packages/igraph/drawing/__init__.py", line 296, in save
+    return self._surface.write_to_png(fname)
+OSError: error while writing to output stream
+2019-12-18 12:24:54,597 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 12:24:54] "[1m[35mGET /circuit_build/test14/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 12:26:16,378 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 12:26:18,704 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 12:26:18] "[37mGET /building/test14/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 12:26:18,973 - pyswarms.single.global_best - INFO - Optimize for 2 iters with {'w': 0.3, 'c2': 2.7, 'c1': 1.3}
+2019-12-18 12:26:22,694 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1651978.1246028019, best pos: [   2.39286738    2.88233226 -263.42026226  216.01102184  264.92683852
+   -5.85022159  140.53288066   96.56196413  -34.78268284   93.38554786]
+2019-12-18 12:27:04,851 - app - ERROR - Exception on /circuit_build/test14/2/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 121, in circuit_build
+    draw(circuit_name, int(gene_nodes), int(output_nodes), int(input_nodes), circuit)
+  File "/home/freddie/PhD/Flask GCDA/app/draw_circuit.py", line 40, in draw
+    out.save('/static/builds/' + circuit_name + '_viz.png')
+  File "/usr/local/lib/python3.5/dist-packages/igraph/drawing/__init__.py", line 296, in save
+    return self._surface.write_to_png(fname)
+OSError: error while writing to output stream
+2019-12-18 12:27:11,797 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 12:27:11] "[1m[35mGET /circuit_build/test14/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 14:04:32,989 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 14:04:36,273 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:04:36] "[37mGET / HTTP/1.1[0m" 200 -
+2019-12-18 14:04:41,162 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:04:41] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-18 14:05:04,099 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:05:04] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-18 14:05:04,132 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:05:04] "[37mGET /outputs/test17/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:05:17,109 - app - ERROR - Exception on /outputs/test17/3/1/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 64, in out_time_series
+    decode_io(circuit_name, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 19, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/test17.txt'
+2019-12-18 14:05:17,124 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:05:17] "[1m[35mPOST /outputs/test17/3/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 14:05:19,563 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:05:19] "[37mGET /inputs/test17/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:05:51,446 - app - ERROR - Exception on /inputs/test17/3/1/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 86, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 19, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test17.txt'
+2019-12-18 14:05:51,448 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:05:51] "[1m[35mPOST /inputs/test17/3/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 14:05:56,202 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:05:56] "[37mGET /check_build/test17/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:05:56,250 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:05:56] "[37mGET /static/outputs/extracted/test170.png HTTP/1.1[0m" 200 -
+2019-12-18 14:05:56,347 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:05:56] "[37mGET /static/inputs/extracted/test171.png HTTP/1.1[0m" 200 -
+2019-12-18 14:05:56,348 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:05:56] "[37mGET /static/inputs/extracted/test170.png HTTP/1.1[0m" 200 -
+2019-12-18 14:06:04,177 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:06:04] "[37mGET /building/test17/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:06:04,420 - pyswarms.single.global_best - INFO - Optimize for 2 iters with {'c1': 1.3, 'w': 0.3, 'c2': 2.7}
+2019-12-18 14:06:20,806 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1934629.104780049, best pos: [   1.06700708    4.45268547    1.05316193  252.27808004  -27.02730031
+ -193.40559325 -125.71472749 -190.87801425   32.91878423  -20.1186616
+ -198.51839037 -282.75573739 -156.71163372 -238.56572705  185.81870703
+ -103.43912916  288.09742751 -213.59599443]
+2019-12-18 14:06:31,959 - app - ERROR - Exception on /circuit_build/test17/3/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 127, in circuit_build
+    inputs_labels = ['I' + str(l) for l in range(input_nodes)]
+TypeError: 'str' object cannot be interpreted as an integer
+2019-12-18 14:06:31,963 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:06:31] "[1m[35mGET /circuit_build/test17/3/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 14:09:18,256 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 14:09:21,490 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:09:21] "[37mGET / HTTP/1.1[0m" 200 -
+2019-12-18 14:09:22,976 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:09:22] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-18 14:09:41,041 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:09:41] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-18 14:09:41,076 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:09:41] "[37mGET /outputs/test18/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:09:50,786 - app - ERROR - Exception on /outputs/test18/3/1/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 64, in out_time_series
+    decode_io(circuit_name, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 19, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/test18.txt'
+2019-12-18 14:09:50,796 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:09:50] "[1m[35mPOST /outputs/test18/3/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 14:09:52,312 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:09:52] "[37mGET /inputs/test18/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:10:32,924 - app - ERROR - Exception on /inputs/test18/3/1/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 86, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 19, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test18.txt'
+2019-12-18 14:10:32,926 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:10:32] "[1m[35mPOST /inputs/test18/3/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 14:10:37,776 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:10:37] "[37mGET /check_build/test18/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:10:37,813 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:10:37] "[37mGET /static/outputs/extracted/test180.png HTTP/1.1[0m" 200 -
+2019-12-18 14:10:37,920 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:10:37] "[37mGET /static/inputs/extracted/test180.png HTTP/1.1[0m" 200 -
+2019-12-18 14:10:37,924 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:10:37] "[37mGET /static/inputs/extracted/test181.png HTTP/1.1[0m" 200 -
+2019-12-18 14:10:52,493 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:10:52] "[37mGET /building/test18/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:10:52,787 - pyswarms.single.global_best - INFO - Optimize for 1 iters with {'c2': 2.7, 'c1': 1.3, 'w': 0.3}
+2019-12-18 14:10:55,286 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 1654042.3540022634, best pos: [   3.31276549    3.11383142    3.4094217  -236.50596701  -88.29276835
+  -13.09211599   74.64394816  207.83224197 -206.86416691  217.51964418
+ -108.3008625  -293.87641846   45.25761048 -162.04617147  214.50699269
+ -139.31996055   57.60025951 -222.38574346]
+2019-12-18 14:11:08,983 - app - ERROR - Exception on /circuit_build/test18/3/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 134, in circuit_build
+    pruned = [((le[0][0], le[0][1]), get_coeff(le[1])) for le in edges_with_coeffs if le[1] > 100. or le[1] < -100.]
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 134, in <listcomp>
+    pruned = [((le[0][0], le[0][1]), get_coeff(le[1])) for le in edges_with_coeffs if le[1] > 100. or le[1] < -100.]
+NameError: name 'get_coeff' is not defined
+2019-12-18 14:11:08,986 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:11:08] "[1m[35mGET /circuit_build/test18/3/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 14:12:23,288 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 14:12:23,929 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:12:23] "[37mGET / HTTP/1.1[0m" 200 -
+2019-12-18 14:12:26,984 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:12:26] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-18 14:12:50,889 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:12:50] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-18 14:12:50,921 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:12:50] "[37mGET /outputs/test18/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:13:03,834 - app - ERROR - Exception on /outputs/test18/3/1/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 65, in out_time_series
+    decode_io(circuit_name, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 19, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/test18.txt'
+2019-12-18 14:13:03,847 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:13:03] "[1m[35mPOST /outputs/test18/3/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 14:13:07,345 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:13:07] "[37mGET /inputs/test18/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:13:47,477 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:13:47] "[37mGET /inputs/test18/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:14:18,029 - app - ERROR - Exception on /inputs/test18/3/1/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 87, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 19, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test18.txt'
+2019-12-18 14:14:18,032 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:14:18] "[1m[35mPOST /inputs/test18/3/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 14:14:24,270 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:14:24] "[37mGET /check_build/test18/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:14:35,209 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:14:35] "[37mGET /building/test18/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:14:35,490 - pyswarms.single.global_best - INFO - Optimize for 1 iters with {'c1': 1.3, 'w': 0.3, 'c2': 2.7}
+2019-12-18 14:14:36,197 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2782493.8913965924, best pos: [   3.07372198    2.95053022    1.29039658  -80.84348266  188.97629185
+ -188.90051135  194.21401631 -211.3399351   138.68578745  259.74451634
+ -180.84464301  178.84978717  -83.13319036  226.26248996 -232.01715441
+   38.37065028  -89.78834979  -78.45214077]
+2019-12-18 14:14:50,769 - app - ERROR - Exception on /circuit_build/test18/3/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 150, in circuit_build
+    hills=[h for h in circuit[:gene_nodes]],
+TypeError: slice indices must be integers or None or have an __index__ method
+2019-12-18 14:14:50,772 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:14:50] "[1m[35mGET /circuit_build/test18/3/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 14:15:13,241 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 14:15:13,427 - pyswarms.single.global_best - INFO - Optimize for 1 iters with {'c2': 2.7, 'c1': 1.3, 'w': 0.3}
+2019-12-18 14:15:13,665 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 48393566.0786281, best pos: [   3.64473542    3.11903678    2.80221773  140.51506749 -179.26410077
+ -144.77003033  -86.18771632   81.32586932 -165.82934397   86.48512499
+ -139.5862154  -119.33332676  246.97775529 -164.52607849   -9.1872089
+  260.42202077  299.6356237   292.22677529]
+2019-12-18 14:15:17,105 - app - ERROR - Exception on /circuit_build/test18/3/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 150, in circuit_build
+    hills=[h for h in circuit[:gene_nodes]],
+TypeError: slice indices must be integers or None or have an __index__ method
+2019-12-18 14:15:17,128 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:15:17] "[1m[35mGET /circuit_build/test18/3/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 14:15:30,860 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 14:15:35,862 - pyswarms.single.global_best - INFO - Optimize for 1 iters with {'c1': 1.3, 'w': 0.3, 'c2': 2.7}
+2019-12-18 14:15:37,259 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2413612.1234561205, best pos: [   4.85906425    2.72649277    3.40670331   88.2050639    82.46548668
+ -122.1700354    29.85999816 -122.53097205  -29.71728517   77.19018075
+ -291.33207784 -170.1497459  -207.95479414 -239.71994074 -129.37063482
+  100.17720861  -83.63411297   73.2867719 ]
+2019-12-18 14:15:41,480 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:15:41] "[37mGET /circuit_build/test18/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:15:41,520 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:15:41] "[37mGET /static/builds/test180.png HTTP/1.1[0m" 200 -
+2019-12-18 14:20:18,180 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 14:20:22,003 - pyswarms.single.global_best - INFO - Optimize for 1 iters with {'w': 0.3, 'c1': 1.3, 'c2': 2.7}
+2019-12-18 14:20:26,004 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2717962.0306998217, best pos: [   4.13667921    2.3949748     2.02048071 -118.74393195 -281.89857741
+  137.00799502  -79.29534549 -269.65041441 -240.89419502  280.57140016
+ -169.61832969 -290.1452377   -29.51411306   37.60437157  114.95424926
+ -221.73875859 -244.74121767    4.25286451]
+2019-12-18 14:20:34,080 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:20:34] "[37mGET /circuit_build/test18/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:20:42,145 - pyswarms.single.global_best - INFO - Optimize for 1 iters with {'w': 0.3, 'c1': 1.3, 'c2': 2.7}
+2019-12-18 14:20:44,914 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2691912.407615571, best pos: [   4.28905055    1.82448146    3.89710745  -65.34271714  283.89812967
+  220.80733069  235.63665262 -220.24649745  209.48729227  -89.31271967
+  140.39741205   56.94657559  121.6044412   126.84714903 -226.98547072
+ -276.17447425  -51.37848724 -288.74111157]
+2019-12-18 14:20:50,132 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:20:50] "[37mGET /circuit_build/test18/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:22:26,410 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 14:22:47,116 - pyswarms.single.global_best - INFO - Optimize for 1 iters with {'c1': 1.3, 'w': 0.3, 'c2': 2.7}
+2019-12-18 14:22:48,997 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2709881.5847612782, best pos: [   2.43613986    3.91083844    2.93893358 -102.14973046  -88.92068075
+   -3.85768826  -62.14229302    7.22954772   35.1741229    72.10823364
+   84.72093013   94.81776837  -10.54808512   92.06804177  111.75264148
+  237.2980005  -164.19566991  131.14409193]
+2019-12-18 14:22:54,325 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:22:54] "[37mGET /circuit_build/test18/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:24:32,120 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-12-18 14:24:37,133 - pyswarms.single.global_best - INFO - Optimize for 1 iters with {'c1': 1.3, 'c2': 2.7, 'w': 0.3}
+2019-12-18 14:24:41,198 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2781234.696913546, best pos: [   2.99179769    2.48927235    2.58953084  289.76357576  -28.84684122
+  145.07923698 -275.72209936   33.3201065   136.1362158    86.64619044
+ -255.48577959 -297.70160022 -243.90099365   64.21809043  -13.24913474
+  127.49211126  180.17715033  196.27720046]
+2019-12-18 14:24:48,301 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:24:48] "[37mGET /circuit_build/test18/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:26:28,667 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:26:28] "[37mGET /home HTTP/1.1[0m" 200 -
+2019-12-18 14:26:32,695 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:26:32] "[37mGET /start HTTP/1.1[0m" 200 -
+2019-12-18 14:26:55,417 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:26:55] "[32mPOST /start HTTP/1.1[0m" 302 -
+2019-12-18 14:26:55,451 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:26:55] "[37mGET /outputs/test20/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:27:07,762 - app - ERROR - Exception on /outputs/test20/2/1/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 65, in out_time_series
+    decode_io(circuit_name, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 19, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/test20.txt'
+2019-12-18 14:27:07,775 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:27:07] "[1m[35mPOST /outputs/test20/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 14:27:11,095 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:27:11] "[37mGET /inputs/test20/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:27:37,863 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:27:37] "[37mGET /inputs/test20/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:28:01,396 - app - ERROR - Exception on /inputs/test20/2/1/2/2000/1000 [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 87, in in_time_series
+    decode_io(circuit_name, 'inputs')
+  File "/home/freddie/PhD/Flask GCDA/app/image_handling.py", line 19, in decode_io
+    os.remove('app/static/' + io + '/' + circuit_name + '.txt')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/inputs/test20.txt'
+2019-12-18 14:28:01,398 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:28:01] "[1m[35mPOST /inputs/test20/2/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2019-12-18 14:28:06,122 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:28:06] "[37mGET /check_build/test20/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:28:06,163 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:28:06] "[37mGET /static/outputs/extracted/test200.png HTTP/1.1[0m" 200 -
+2019-12-18 14:28:06,258 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:28:06] "[37mGET /static/inputs/extracted/test200.png HTTP/1.1[0m" 200 -
+2019-12-18 14:28:06,259 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:28:06] "[37mGET /static/inputs/extracted/test201.png HTTP/1.1[0m" 200 -
+2019-12-18 14:28:22,229 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:28:22] "[37mGET /building/test20/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:28:22,528 - pyswarms.single.global_best - INFO - Optimize for 1 iters with {'c1': 1.3, 'c2': 2.7, 'w': 0.3}
+2019-12-18 14:28:22,665 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 2401384.715429146, best pos: [   1.64209387    4.47044495  162.96193787 -248.50354583 -119.64933162
+ -100.07353897   10.69693746 -179.4829232   -41.27042713  -72.23395454]
+2019-12-18 14:28:36,326 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:28:36] "[37mGET /circuit_build/test20/2/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2019-12-18 14:28:36,366 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:28:36] "[37mGET /static/builds/test200.png HTTP/1.1[0m" 200 -
+2019-12-18 14:28:56,313 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2019 14:28:56] "[37mGET /home HTTP/1.1[0m" 200 -
+2019-12-18 14:31:43,721 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 10:31:11,952 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 10:31:19,066 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 10:31:19] "[37mGET / HTTP/1.1[0m" 200 -
+2020-01-06 10:31:19,148 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 10:31:19] "[37mGET /static/home_banner.png HTTP/1.1[0m" 200 -
+2020-01-06 10:31:19,483 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 10:31:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2020-01-06 10:31:31,829 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 10:31:31] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 10:45:58,498 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 10:46:04,662 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 10:46:04] "[37mGET / HTTP/1.1[0m" 200 -
+2020-01-06 10:46:07,027 - app - ERROR - Exception on /database [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 18, in database_view
+    q = GeneCircuit.query('SELECT circuit_name, gene_nodes, input_nodes, output_nodes FROM gene_circuit;')
+TypeError: 'BaseQuery' object is not callable
+2020-01-06 10:46:07,260 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 10:46:07] "[1m[35mGET /database HTTP/1.1[0m" 500 -
+2020-01-06 10:48:18,318 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 10:48:19,595 - app - ERROR - Exception on /database [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 20, in database_view
+    return render_template('database_view.html')
+  File "/usr/local/lib/python3.5/dist-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/usr/local/lib/python3.5/dist-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/usr/local/lib/python3.5/dist-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python3.5/dist-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python3.5/dist-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/usr/local/lib/python3.5/dist-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/usr/local/lib/python3.5/dist-packages/flask/templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: database_view.html
+2020-01-06 10:48:19,865 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 10:48:19] "[1m[35mGET /database HTTP/1.1[0m" 500 -
+2020-01-06 10:52:12,490 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 10:52:16,971 - app - ERROR - Exception on /database [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 26, in database_view
+    return render_template('database_view.html')
+  File "/usr/local/lib/python3.5/dist-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/usr/local/lib/python3.5/dist-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/usr/local/lib/python3.5/dist-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python3.5/dist-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python3.5/dist-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/usr/local/lib/python3.5/dist-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/usr/local/lib/python3.5/dist-packages/flask/templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: database_view.html
+2020-01-06 10:52:16,985 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 10:52:16] "[1m[35mGET /database HTTP/1.1[0m" 500 -
+2020-01-06 11:10:15,107 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 11:10:19,667 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 11:10:19] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 11:19:48,614 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 11:19:51,578 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 11:19:51] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 11:20:52,263 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 11:20:54,163 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 11:20:54] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 11:32:50,715 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 11:32:51,995 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 11:32:51] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 11:32:55,515 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 11:32:55] "[33mGET /circuit_summary/test17 HTTP/1.1[0m" 404 -
+2020-01-06 11:34:32,759 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 11:34:32] "[33mGET /circuit_summary/test17 HTTP/1.1[0m" 404 -
+2020-01-06 11:41:20,309 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 11:41:23,028 - app - ERROR - Exception on /circuit_build/test17/3/1/2/2000/1000 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 145, in circuit_build
+    time_span)
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 49, in build_circuit
+    targets = get_time_series(circuit_name, output_nodes, 'outputs')
+  File "/home/freddie/PhD/Flask GCDA/app/opt_topology.py", line 43, in get_time_series
+    f = open('app/static/' + folder +'/extracted/' + circuit_name + str(t) + '.pickle', 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: 'app/static/outputs/extracted/test170.pickle'
+2020-01-06 11:41:23,043 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 11:41:23] "[1m[35mGET /circuit_build/test17/3/1/2/2000/1000 HTTP/1.1[0m" 500 -
+2020-01-06 11:42:48,726 - pyswarms.single.global_best - INFO - Optimize for 1 iters with {'w': 0.3, 'c2': 2.7, 'c1': 1.3}
+2020-01-06 11:42:53,252 - pyswarms.single.global_best - INFO - Optimization finished | best cost: 7767692.1407799665, best pos: [   1.01730593    2.7602768     2.96332687  153.81815003 -232.12451798
+  127.44219821   40.92853841 -296.48675481  112.69254633  262.8380519
+ -219.83822416  -93.43785057  266.38258654  100.37944083 -144.87280571
+  263.31249885  -28.49774428  -39.0689795 ]
+2020-01-06 11:43:08,457 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 11:43:08] "[37mGET /circuit_build/test18/3/1/2/2000/1000 HTTP/1.1[0m" 200 -
+2020-01-06 11:43:08,488 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 11:43:08] "[37mGET /static/builds/test180.png HTTP/1.1[0m" 200 -
+2020-01-06 11:48:33,802 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 11:48:38,898 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 11:48:38] "[37mGET / HTTP/1.1[0m" 200 -
+2020-01-06 11:48:39,632 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 11:48:39] "[37mGET / HTTP/1.1[0m" 200 -
+2020-01-06 11:48:41,639 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 11:48:41] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 11:48:44,597 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 11:48:44] "[37mGET /circuit_summary/test17 HTTP/1.1[0m" 200 -
+2020-01-06 11:48:44,637 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 11:48:44] "[33mGET /static/builds/test170.png HTTP/1.1[0m" 404 -
+2020-01-06 11:49:13,297 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 11:49:13] "[37mGET /circuit_summary/test18 HTTP/1.1[0m" 200 -
+2020-01-06 12:05:48,233 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 12:05:51,351 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:05:51] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 12:05:52,928 - app - ERROR - Exception on /circuit_summary/test18 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 37, in circuit_summary
+    gene_labels = [chr(l) for l in range(65, 65 + int(gene_nodes))]
+NameError: name 'gene_nodes' is not defined
+2020-01-06 12:05:52,940 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:05:52] "[1m[35mGET /circuit_summary/test18 HTTP/1.1[0m" 500 -
+2020-01-06 12:07:54,428 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 12:07:59,905 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:07:59] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 12:08:01,137 - app - ERROR - Exception on /circuit_summary/test18 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 40, in circuit_summary
+    gene_labels = [chr(l) for l in range(65, 65 + int(gene_nodes))]
+UnboundLocalError: local variable 'gene_nodes' referenced before assignment
+2020-01-06 12:08:01,152 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:08:01] "[1m[35mGET /circuit_summary/test18 HTTP/1.1[0m" 500 -
+2020-01-06 12:08:51,507 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 12:08:52,693 - app - ERROR - Exception on /circuit_summary/test18 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 41, in circuit_summary
+    gene_labels = [chr(l) for l in range(65, 65 + int(gene_nodes))]
+UnboundLocalError: local variable 'gene_nodes' referenced before assignment
+2020-01-06 12:08:52,706 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:08:52] "[1m[35mGET /circuit_summary/test18 HTTP/1.1[0m" 500 -
+2020-01-06 12:09:44,164 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 12:09:46,133 - app - ERROR - Exception on /circuit_summary/test18 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 32, in circuit_summary
+    print(str(c), file=stderr)
+NameError: name 'stderr' is not defined
+2020-01-06 12:09:46,144 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:09:46] "[1m[35mGET /circuit_summary/test18 HTTP/1.1[0m" 500 -
+2020-01-06 12:10:07,347 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 12:10:14,104 - app - ERROR - Exception on /circuit_summary/test18 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 42, in circuit_summary
+    gene_labels = [chr(l) for l in range(65, 65 + int(gene_nodes))]
+UnboundLocalError: local variable 'gene_nodes' referenced before assignment
+2020-01-06 12:10:14,117 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:10:14] "[1m[35mGET /circuit_summary/test18 HTTP/1.1[0m" 500 -
+2020-01-06 12:12:03,546 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 12:12:05,713 - app - ERROR - Exception on /circuit_summary/test18 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/freddie/PhD/Flask GCDA/app/routes.py", line 49, in circuit_summary
+    edges_with_coeffs = [e for e in zip(filtered_edges, circuit[int(gene_nodes):])]
+NameError: name 'circuit' is not defined
+2020-01-06 12:12:05,723 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:12:05] "[1m[35mGET /circuit_summary/test18 HTTP/1.1[0m" 500 -
+2020-01-06 12:12:54,734 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 12:12:58,918 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:12:58] "[37mGET /circuit_summary/test18 HTTP/1.1[0m" 200 -
+2020-01-06 12:13:07,789 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:13:07] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 12:13:08,903 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:13:08] "[37mGET /circuit_summary/test20 HTTP/1.1[0m" 200 -
+2020-01-06 12:13:08,961 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:13:08] "[37mGET /static/builds/test200.png HTTP/1.1[0m" 200 -
+2020-01-06 12:13:18,043 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:13:18] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 12:36:40,817 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 12:36:47,228 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:36:47] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 12:36:49,454 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:36:49] "[37mGET /circuit_summary/test18 HTTP/1.1[0m" 200 -
+2020-01-06 12:36:55,649 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:36:55] "[37mGET /circuit_summary/test20 HTTP/1.1[0m" 200 -
+2020-01-06 12:39:30,300 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:39:30] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 12:45:23,344 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 12:45:25,314 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:45:25] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 12:52:19,238 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 12:52:19,734 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:52:19] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 12:52:41,873 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 12:52:43,725 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:52:43] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 12:53:59,602 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 12:54:00,914 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:54:00] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 12:54:18,977 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 12:54:20,632 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:54:20] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 12:59:51,898 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 12:59:52,907 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:59:52] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 12:59:52,953 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:59:52] "[37mGET /static/modelling.png HTTP/1.1[0m" 200 -
+2020-01-06 12:59:53,034 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 12:59:53] "[37mGET /static/branching_hill.png HTTP/1.1[0m" 200 -
+2020-01-06 13:03:28,237 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 13:03:30,130 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:03:30] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 13:04:33,719 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 13:04:36,193 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:04:36] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 13:05:42,550 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 13:05:47,809 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:05:47] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 13:05:51,589 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:05:51] "[37mGET /circuit_summary/test18 HTTP/1.1[0m" 200 -
+2020-01-06 13:05:55,128 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:05:55] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 13:10:38,221 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 13:10:41,032 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:10:41] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 13:10:51,119 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:10:51] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 13:10:55,210 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:10:55] "[37mGET /circuit_summary/test18 HTTP/1.1[0m" 200 -
+2020-01-06 13:11:03,758 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:11:03] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 13:50:13,309 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 13:50:21,470 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:50:21] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 13:50:23,202 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:50:23] "[37mGET /start HTTP/1.1[0m" 200 -
+2020-01-06 13:50:25,377 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:50:25] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 13:50:26,940 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:50:26] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 13:50:37,519 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:50:37] "[37mGET /circuit_summary/repressilator HTTP/1.1[0m" 200 -
+2020-01-06 13:50:37,566 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:50:37] "[33mGET /static/builds/repressilator0.png HTTP/1.1[0m" 404 -
+2020-01-06 13:51:02,763 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:51:02] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 13:51:05,102 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:51:05] "[37mGET /circuit_summary/nand HTTP/1.1[0m" 200 -
+2020-01-06 13:51:05,131 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:51:05] "[33mGET /static/builds/nand0.png HTTP/1.1[0m" 404 -
+2020-01-06 13:51:17,334 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:51:17] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 13:51:18,784 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:51:18] "[37mGET /circuit_summary/toggle HTTP/1.1[0m" 200 -
+2020-01-06 13:51:18,814 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:51:18] "[33mGET /static/builds/toggle0.png HTTP/1.1[0m" 404 -
+2020-01-06 13:54:31,425 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 13:54:32,070 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:54:32] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 13:54:33,410 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:54:33] "[37mGET /circuit_summary/repressilator HTTP/1.1[0m" 200 -
+2020-01-06 13:54:33,453 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:54:33] "[37mGET /static/builds/repressilator0.png HTTP/1.1[0m" 200 -
+2020-01-06 13:54:44,078 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:54:44] "[37mGET /circuit_summary/nand HTTP/1.1[0m" 200 -
+2020-01-06 13:54:44,108 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:54:44] "[37mGET /static/builds/nand0.png HTTP/1.1[0m" 200 -
+2020-01-06 13:54:47,879 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:54:47] "[37mGET /circuit_summary/toggle HTTP/1.1[0m" 200 -
+2020-01-06 13:54:47,913 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:54:47] "[37mGET /static/builds/toggle0.png HTTP/1.1[0m" 200 -
+2020-01-06 13:54:57,058 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:54:57] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 13:55:00,414 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:55:00] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 13:58:28,246 - werkzeug - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-01-06 13:58:30,783 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:58:30] "[37mGET /home HTTP/1.1[0m" 200 -
+2020-01-06 13:58:35,273 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:58:35] "[37mGET /database HTTP/1.1[0m" 200 -
+2020-01-06 13:58:39,390 - werkzeug - INFO - 127.0.0.1 - - [06/Jan/2020 13:58:39] "[37mGET /home HTTP/1.1[0m" 200 -
